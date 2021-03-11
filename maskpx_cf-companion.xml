@@ -12,6 +12,7 @@
     <Overview>Companion App for Cloudflare to dynamically update cnames</Overview>
     <Category>Network:Web Network:Proxy</Category>
     <TemplateURL>https://raw.githubusercontent.com/maskpx/docker-template/master/maskpx_cf-companion.xml</TemplateURL>
+    <Icon>https://raw.githubusercontent.com/maskpx/docker-template/master/img/cloudflare.png</Icon>
     <Description>Companion App for Cloudflare to dynamically update cnames</Description>
     <Networking>
         <Mode>bridge</Mode>
