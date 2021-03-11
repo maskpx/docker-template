@@ -13,7 +13,7 @@
     <Category>Network:Web, Network:Auth</Category>
     <WebUI>http://[IP]:[PORT:9091]</WebUI>
     <TemplateURL>https://raw.githubusercontent.com/maskpx/docker-templates/master/maskpx_authelia.xml</TemplateURL>
-    <Icon>https://raw.githubusercontent.com/maskpx/docker-templates/master/images/authelia.png</Icon>
+    <Icon>https://raw.githubusercontent.com/maskpx/docker-template/master/img/authelia-icon.jpg</Icon>
     <Description>Authelia Auth service</Description>
     <Networking>
         <Mode>bridge</Mode>
