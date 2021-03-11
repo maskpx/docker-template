@@ -14,7 +14,7 @@
 </Overview>
   <Category>Tools:Utilities</Category>
   <WebUI>http://[IP]:[PORT:80]/</WebUI>
-  <TemplateURL>https://raw.githubusercontent.com/selfhosters/unRAID-CA-templates/master/templates/speedtest-tracker.xml</TemplateURL>
+  <TemplateURL>https://raw.githubusercontent.com/maskpx/docker-template/master/maskpx_speedtest.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/selfhosters/unRAID-CA-templates/master/templates/img/speedtest-tracker.png</Icon>
   <ExtraParams>--restart unless-stopped</ExtraParams>
   <PostArgs/>

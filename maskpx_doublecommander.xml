@@ -13,7 +13,7 @@
     [br]By default the user/pass is abc/abc</Overview>
     <Category>Tools:Utilities</Category>
     <WebUI>http://[IP]:[PORT:3000]</WebUI>
-    <TemplateURL>https://raw.githubusercontent.com/maskpx/docker-templates/master/maskpx_doublecommander.xml</TemplateURL>
+    <TemplateURL>https://raw.githubusercontent.com/maskpx/docker-template/master/maskpx_doublecommander.xml</TemplateURL>
     <Icon>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/doublecommander-icon.png</Icon>
     <ExtraParams/>
     <PostArgs/>

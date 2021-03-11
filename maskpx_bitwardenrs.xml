@@ -35,7 +35,7 @@
   </Overview>
   <Category>Tools:Utilities</Category>
   <WebUI>http://[IP]:[PORT:80]</WebUI>
-  <TemplateURL>https://raw.githubusercontent.com/selfhosters/unRAID-CA-templates/master/templates/bitwardenrs.xml</TemplateURL>
+  <TemplateURL>https://raw.githubusercontent.com/maskpx/docker-template/master/maskpx_bitwardenrs.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/selfhosters/unRAID-CA-templates/master/templates/img/bitwardenrs.png</Icon>
   <ExtraParams/>
   <PostArgs/>

@@ -13,7 +13,7 @@
     This Docker includes OpenVPN and WireGuard to ensure a secure and private connection to the Internet, including use of iptables to prevent IP leakage when the tunnel is down. It also includes Privoxy to allow unfiltered access to index sites, to use Privoxy please point your application at "http://host ip:8118".</Overview>
     <Category>Downloaders:</Category>
     <WebUI>http://[IP]:[PORT:8112]/</WebUI>
-    <TemplateURL>https://raw.githubusercontent.com/binhex/docker-templates/master/binhex/delugevpn.xml</TemplateURL>
+    <TemplateURL>https://raw.githubusercontent.com/maskpx/docker-template/master/maskpx_delugevpn.xml</TemplateURL>
     <Icon>https://raw.githubusercontent.com/binhex/docker-templates/master/binhex/images/deluge-icon.png</Icon>
     <ExtraParams>--sysctl="net.ipv4.conf.all.src_valid_mark=1"</ExtraParams>
     <PostArgs/>

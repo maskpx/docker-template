@@ -14,7 +14,7 @@
     </Overview>
     <Category>Docker:</Category>
     <WebUI>http://[IP]:[PORT:9000]/</WebUI>
-    <TemplateURL>https://raw.githubusercontent.com/maskpx/docker-templates/master/maskpx_portainer.xml</TemplateURL>
+    <TemplateURL>https://raw.githubusercontent.com/maskpx/docker-template/master/maskpx_portainer.xml</TemplateURL>
     <Icon>https://d36jcksde1wxzq.cloudfront.net/be7833db9bddb4494d2a7c3dd659199a.png</Icon>
     <ExtraParams/>
     <PostArgs/>

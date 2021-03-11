@@ -12,7 +12,7 @@
     <Overview>Your Media Server's one-stop shop! HTPC/Homelab services organizer, written in PHP. The new, upgraded official image for Organzir v2. </Overview>
     <Category>HomeAutomation: Network:Management MediaApp:Other MediaServer:Other Productivity: Tools:</Category>
     <WebUI>http://[IP]:[PORT:80]/</WebUI>
-    <TemplateURL>https://raw.githubusercontent.com/maskpx/docker-templates/master/maskpx_organizr.xml</TemplateURL>
+    <TemplateURL>https://raw.githubusercontent.com/maskpx/docker-template/master/maskpx_organizr.xml</TemplateURL>
     <Icon>https://raw.githubusercontent.com/causefx/Organizr/v2-master/plugins/images/organizr/logo-no-border.png</Icon>
     <ExtraParams/>
     <PostArgs/>

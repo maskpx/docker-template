@@ -11,7 +11,7 @@
     <Overview>Ombi allows you to host your own Plex Request and user management system.</Overview>
     <Category>Downloaders: Network:Other MediaApp:Video Tools:Utilities</Category>
     <WebUI>http://[IP]:[PORT:3579]/</WebUI>
-    <TemplateURL>https://raw.githubusercontent.com/maskpx/docker-templates/master/maskpx_ombi.xml</TemplateURL>
+    <TemplateURL>https://raw.githubusercontent.com/maskpx/docker-template/master/maskpx_ombi.xml</TemplateURL>
     <Icon>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/ombi.png</Icon>
     <DonateText>Donations</DonateText>
     <DonateLink>https://www.linuxserver.io/donate</DonateLink>

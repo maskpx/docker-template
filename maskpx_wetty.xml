@@ -12,8 +12,8 @@
     <Overview>HTTP based ssh gateway   Converted By Community Applications   Always verify this template (and values) against the dockerhub support page for the container</Overview>
     <Category/>
     <WebUI>http://[IP]:[PORT::3000]</WebUI>
-    <TemplateURL/>
-    <Icon>/plugins/dynamix.docker.manager/images/question.png</Icon>
+    <TemplateURL>https://raw.githubusercontent.com/maskpx/docker-template/master/maskpx_wetty.xml</TemplateURL>
+    <Icon>https://raw.githubusercontent.com/maskpx/docker-template/master/img/wetty.png</Icon>
     <ExtraParams/>
     <PostArgs/>
     <CPUset/>

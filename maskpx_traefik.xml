@@ -12,7 +12,7 @@
     <Overview>Traefik is a modern reverse-proxy.</Overview>
     <Category>Network:Web, Network:Proxy</Category>
     <WebUI>http://[IP]:[PORT:8090]</WebUI>
-    <TemplateURL>https://raw.githubusercontent.com/maskpx/docker-templates/master/maskpx_traefik.xml</TemplateURL>
+    <TemplateURL>https://raw.githubusercontent.com/maskpx/docker-template/master/maskpx_traefik.xml</TemplateURL>
     <Icon>https://raw.githubusercontent.com/Zeropointer11/docker-templates/master/images/traefik.png</Icon>
     <ExtraParams/>
     <PostArgs/>

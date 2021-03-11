@@ -22,7 +22,7 @@
     </Overview>
     <Category>Tools:</Category>
     <WebUI>http://[IP]:[PORT:5800]</WebUI>
-    <TemplateURL>https://raw.githubusercontent.com/maskpx/docker-templates/master/maskpx_putty.xml</TemplateURL>
+    <TemplateURL>https://raw.githubusercontent.com/maskpx/docker-template/master/maskpx_putty.xml</TemplateURL>
     <Icon>https://raw.githubusercontent.com/jlesage/docker-templates/master/jlesage/images/putty-icon.png</Icon>
     <ExtraParams/>
     <PostArgs/>

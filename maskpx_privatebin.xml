@@ -12,7 +12,7 @@
     <Overview>A minimalist, open source online pastebin where the server has zero knowledge of pasted data. Data is encrypted/decrypted in the browser using 256 bits AES.</Overview>
     <Category>Other:</Category>
     <WebUI>http://[IP]:[PORT:8080]</WebUI>
-    <TemplateURL>https://raw.githubusercontent.com/selfhosters/unRAID-CA-templates/master/templates/privatebin.xml</TemplateURL>
+    <TemplateURL>https://raw.githubusercontent.com/maskpx/docker-template/master/maskpx_privatebin.xml</TemplateURL>
     <Icon>https://raw.githubusercontent.com/selfhosters/unRAID-CA-templates/master/templates/img/privatebin.png</Icon>
     <ExtraParams>--read-only</ExtraParams>
     <PostArgs/>

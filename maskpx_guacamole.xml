@@ -18,7 +18,7 @@
   </Overview>
   <Category>Network:Management Network:Other</Category>
   <WebUI>http://[IP]:[PORT:8080]/</WebUI>
-  <TemplateURL>https://raw.githubusercontent.com/jason-bean/docker-templates/master/jasonbean-repo/Guacamole.xml</TemplateURL>
+  <TemplateURL>https://raw.githubusercontent.com/maskpx/docker-template/master/maskpx_guacamole.xml</TemplateURL>
   <Icon>https://i.imgur.com/eflpez4.png</Icon>
   <ExtraParams/>
   <PostArgs/>

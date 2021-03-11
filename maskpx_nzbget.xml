@@ -12,7 +12,7 @@
   <Overview>NZBGet is a usenet downloader, written in C++ and designed with performance in mind to achieve maximum download speed by using very little system resources. It supports all platforms including Windows, Mac, Linux and works on all devices including PC, NAS, WLAN routers and media players</Overview>
   <Category>Downloaders:</Category>
   <WebUI>http://[IP]:[PORT:6789]/</WebUI>
-  <TemplateURL>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/nzbget.xml</TemplateURL>
+  <TemplateURL>https://raw.githubusercontent.com/maskpx/docker-template/master/maskpx_nzbget.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/nzbget-icon.png</Icon>
   <ExtraParams/>
   <PostArgs/>

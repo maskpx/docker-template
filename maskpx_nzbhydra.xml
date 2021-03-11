@@ -12,7 +12,7 @@
   <Overview>NZBHydra is a meta search for NZB indexers and the "spiritual successor" to NZBmegasearcH. It provides easy access to a number of raw and newznab based indexers.</Overview>
   <Category>Downloaders: MediaApp:Other Tools:Utilities</Category>
   <WebUI>http://[IP]:[PORT:5076]/</WebUI>
-  <TemplateURL>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/nzbhydra2.xml</TemplateURL>
+  <TemplateURL>https://raw.githubusercontent.com/maskpx/docker-template/master/maskpx_nzbhydra.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/hydra-icon.png</Icon>
   <ExtraParams/>
   <PostArgs/>

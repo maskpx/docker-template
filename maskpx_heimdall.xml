@@ -12,7 +12,7 @@
   <Overview>Heimdall is a way to organise all those links to your most used web sites and web applications in a simple way.</Overview>
   <Category>Tools:Utilities Network:Web Network:Other</Category>
   <WebUI>http://[IP]:[PORT:80]/</WebUI>
-  <TemplateURL>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/heimdall.xml</TemplateURL>
+  <TemplateURL>https://raw.githubusercontent.com/maskpx/docker-template/master/maskpx_heimdall.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/heimdall-icon.png</Icon>
   <ExtraParams/>
   <PostArgs/>
