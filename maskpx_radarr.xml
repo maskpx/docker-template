@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>radarr</Name>
+  <Repository>linuxserver/radarr</Repository>
+  <Registry>https://hub.docker.com/r/linuxserver/radarr/</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/maskpx/docker-templates</Support>
+  <Project>https://github.com/Radarr/Radarr</Project>
+  <Overview>Radarr - A fork of Sonarr to work with movies &#xE0; la Couchpotato.</Overview>
+  <Category>Downloaders: MediaApp:Video</Category>
+  <WebUI>http://[IP]:[PORT:7878]</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/radarr.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/radarr.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1615385959</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>Radarr - A fork of Sonarr to work with movies &#xE0; la Couchpotato.</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort/>
+        <ContainerPort>7878</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Config Name="Radarr Path" Target="7878" Default="7878" Mode="tcp" Description="Container Port: 7878" Type="Port" Display="always" Required="true" Mask="false"/>
+  <Config Name="Media Path" Target="/media" Default="" Mode="rw" Description="Container Path: /media" Type="Path" Display="always" Required="true" Mask="false"/>
+  <Config Name="Key 1" Target="PUID" Default="99" Mode="" Description="Container Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false">99</Config>
+  <Config Name="Key 2" Target="PGID" Default="100" Mode="" Description="Container Variable: PGID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
+  <Config Name="traefik.enable" Target="traefik.enable" Default="true" Mode="" Description="Container Label: traefik.enable" Type="Label" Display="always" Required="true" Mask="false">true</Config>
+  <Config Name="traefik.http.routers.radarr.rule" Target="traefik.http.routers.radarr.rule" Default="Host(`radarr.example.com`)" Mode="" Description="Container Label: traefik.http.routers.radarr.rule" Type="Label" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="traefik.http.services.radarr.loadbalancer.server.port" Target="traefik.http.services.radarr.loadbalancer.server.port" Default="7878" Mode="" Description="Container Label: traefik.http.services.radarr.loadbalancer.server.port" Type="Label" Display="always" Required="false" Mask="false">7878</Config>
+  <Config Name="traefik.http.routers.radarr.middlewares" Target="traefik.http.routers.radarr.middlewares" Default="secured@file" Mode="" Description="Container Label: traefik.http.routers.radarr.middlewares" Type="Label" Display="always" Required="true" Mask="false">secured@file</Config>
+  <Config Name="traefik.http.routers.radarr.entrypoints" Target="traefik.http.routers.radarr.entrypoints" Default="https" Mode="" Description="Container Label: traefik.http.routers.radarr.entrypoints" Type="Label" Display="always" Required="true" Mask="false">https</Config>
+  <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/radarr" Mode="rw" Description="Container Path: /config" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/radarr</Config>
+</Container>

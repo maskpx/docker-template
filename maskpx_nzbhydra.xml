@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>nzbhydra</Name>
+  <Repository>linuxserver/nzbhydra2</Repository>
+  <Registry>https://hub.docker.com/r/linuxserver/nzbhydra2/</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/maskpx/docker-templates</Support>
+  <Project>https://github.com/theotherp/nzbhydra2</Project>
+  <Overview>NZBHydra is a meta search for NZB indexers and the "spiritual successor" to NZBmegasearcH. It provides easy access to a number of raw and newznab based indexers.</Overview>
+  <Category>Downloaders: MediaApp:Other Tools:Utilities</Category>
+  <WebUI>http://[IP]:[PORT:5076]/</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/nzbhydra2.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/hydra-icon.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1615387460</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>NZBHydra is a meta search for NZB indexers and the "spiritual successor" to NZBmegasearcH. It provides easy access to a number of raw and newznab based indexers.</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort/>
+        <ContainerPort>5076</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Config Name="Nzbhydra Port" Target="5076" Default="5076" Mode="tcp" Description="Container Port: 5076" Type="Port" Display="always" Required="true" Mask="false"/>
+  <Config Name="Key 1" Target="PUID" Default="99" Mode="" Description="Container Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false">99</Config>
+  <Config Name="Key 2" Target="PGID" Default="100" Mode="" Description="Container Variable: PGID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
+  <Config Name="traefik.enable" Target="traefik.enable" Default="true" Mode="" Description="Container Label: traefik.enable" Type="Label" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="traefik.http.routers.nzbhydra.rule" Target="traefik.http.routers.nzbhydra.rule" Default="Host(`nzbhydra.example.com`)" Mode="" Description="Container Label: traefik.http.routers.nzbhydra.rule" Type="Label" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="traefik.http.services.nzbhydra.loadbalancer.server.port" Target="traefik.http.services.nzbhydra.loadbalancer.server.port" Default="5076" Mode="" Description="Container Label: traefik.http.services.nzbhydra.loadbalancer.server.port" Type="Label" Display="always" Required="false" Mask="false">5076</Config>
+  <Config Name="traefik.http.routers.nzbhydra.middlewares" Target="traefik.http.routers.nzbhydra.middlewares" Default="secured@file" Mode="" Description="Container Label: traefik.http.routers.nzbhydra.middlewares" Type="Label" Display="always" Required="true" Mask="false">secured@file</Config>
+  <Config Name="traefik.http.routers.nzbhydra.entrypoints" Target="traefik.http.routers.nzbhydra.entrypoints" Default="https" Mode="" Description="Container Label: traefik.http.routers.nzbhydra.entrypoints" Type="Label" Display="always" Required="true" Mask="false">https</Config>
+  <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/nzbhydra2" Mode="rw" Description="Container Path: /config" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/nzbhydra2</Config>
+</Container>

@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Authelia</Name>
+    <Repository>authelia/authelia</Repository>
+    <Registry>https://hub.docker.com/r/authelia/authelia/</Registry>
+    <Network>bridge</Network>
+    <MyIP/>
+    <Shell>sh</Shell>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/maskpx/docker-templates/issues</Support>
+    <Project/>
+    <Overview>Authelia Auth service</Overview>
+    <Category>Network:Web, Network:Auth</Category>
+    <WebUI>http://[IP]:[PORT:9091]</WebUI>
+    <TemplateURL>https://raw.githubusercontent.com/maskpx/docker-templates/master/maskpx_authelia.xml</TemplateURL>
+    <Icon>https://raw.githubusercontent.com/maskpx/docker-templates/master/images/authelia.png</Icon>
+    <Description>Authelia Auth service</Description>
+    <Networking>
+        <Mode>bridge</Mode>
+        <Publish>
+            <Port>
+                <HostPort>9091</HostPort>
+                <ContainerPort>9091</ContainerPort>
+                <Protocol>tcp</Protocol>
+            </Port>
+        </Publish>
+    </Networking>
+    <Config Name="Web Interface Port" Target="9091" Default="9091" Mode="tcp" Description="This is Web UI port you can access via a web browser." Type="Port" Display="always" Required="true" Mask="{8}">9091</Config>
+    <Config Name="Config Storage Path" Target="/config" Default="/mnt/user/appdata/Authelia" Mode="rw" Description="Authelia Config Path /config" Type="Path" Display="always" Required="true" Mask="{8}">/mnt/user/appdata/Authelia</Config>
+    <Config Name="Timezone" Target="TZ" Default="Europe/Vienna" Mode="" Description="Container Variable: TZ" Type="Variable" Display="always" Required="false" Mask="false">Europe/Vienna</Config>
+    <Config Name="AUTHELIA_JWT_SECRET_FILE" Target="AUTHELIA_JWT_SECRET_FILE" Default="" Mode="" Description="Path to the JWT Secrets file" Type="Variable" Display="always" Required="true" Mask="false"></Config>
+    <Config Name="AUTHELIA_SESSION_SECRET_FILE" Target="AUTHELIA_SESSION_SECRET_FILE" Default="" Mode="" Description="Path to the Session Secret file" Type="Variable" Display="always" Required="true" Mask="false"></Config>
+    <Config Name="AUTHELIA_DUO_API_SECRET_KEY_FILE" Target="AUTHELIA_DUO_API_SECRET_KEY_FILE" Default="" Mode="" Description="Path to the DUO Secrests file" Type="Variable" Display="always" Required="true" Mask="false"></Config>
+    <Config Name="AUTHELIA_NOTIFIER_SMTP_PASSWORD_FILE" Target="AUTHELIA_NOTIFIER_SMTP_PASSWORD_FILE" Default="" Mode="" Description="Path to the SMTP Secret file" Type="Variable" Display="always" Required="true" Mask="false"></Config>
+    <Config Name="traefik.http.routers.authelia.rule" Target="traefik.http.routers.authelia.rule" Default="" Mode="" Description="traefik.http.routers.authelia.rule" Type="Label" Display="always" Required="true" Mask="false"></Config>
+    <Config Name="traefik.http.routers.authelia.middlewares" Target="traefik.http.routers.authelia.middlewares" Default="" Mode="" Description="traefik.http.routers.authelia.middlewares" Type="Label" Display="always" Required="false" Mask="false"/>
+    <Config Name="traefik.http.middlewares.authelia.forwardauth.address" Target="traefik.http.middlewares.authelia.forwardauth.address" Default="" Mode="" Description="Put the internal IP:Port and the redirect url what you defined as rule" Type="Label" Display="always" Required="true" Mask="false"></Config>
+    <Config Name="traefik.http.middlewares.authelia.forwardauth.trustForwardHeader" Target="traefik.http.middlewares.authelia.forwardauth.trustForwardHeader" Default="" Mode="" Description="traefik.http.middlewares.authelia.forwardauth.trustForwardHeader" Type="Label" Display="always" Required="true" Mask="false">true</Config>
+    <Config Name="traefik.http.middlewares.authelia.forwardauth.authResponseHeaders" Target="traefik.http.middlewares.authelia.forwardauth.authResponseHeaders" Default="" Mode="" Description="traefik.http.middlewares.authelia.forwardauth.authResponseHeaders" Type="Label" Display="always" Required="true" Mask="false">Remote-User, Remote-Groups</Config>
+    <Config Name="traefik.enable" Target="traefik.enable" Default="true" Mode="" Description="traefik.enable" Type="Label" Display="advanced" Required="true" Mask="false">true</Config>
+    <Config Name="traefik.http.routers.authelia.entrypoints" Target="traefik.http.routers.authelia.entrypoints" Default="https" Mode="" Description="traefik.http.authelia.traefik.entrypoints" Type="Label" Display="advanced" Required="true" Mask="false">https</Config>
+    <Config Name="traefik.http.services.authelia.loadbalancer.server.port" Target="traefik.http.services.authelia.loadbalancer.server.port" Default="9091" Mode="" Description="traefik.http.services.authelia.loadbalancer.server.port" Type="Label" Display="advanced" Required="true" Mask="false">9091</Config>
+</Container>

@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>sonarr</Name>
+  <Repository>linuxserver/sonarr:preview</Repository>
+  <Registry>https://hub.docker.com/r/linuxserver/sonarr/</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/maskpx/docker-templates</Support>
+  <Project>https://sonarr.tv/</Project>
+  <Overview>Sonarr (formerly NZBdrone) is a PVR for usenet and bittorrent users. It can monitor multiple RSS feeds for new episodes of your favorite shows and will grab, sort and rename them. It can also be configured to automatically upgrade the quality of files already downloaded when a better quality format becomes available.</Overview>
+  <Category>Downloaders: MediaApp:Video</Category>
+  <WebUI>http://[IP]:[PORT:8989]/</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/sonarr.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/sonarr-icon.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1615385073</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>Sonarr (formerly NZBdrone) is a PVR for usenet and bittorrent users. It can monitor multiple RSS feeds for new episodes of your favorite shows and will grab, sort and rename them. It can also be configured to automatically upgrade the quality of files already downloaded when a better quality format becomes available.</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort/>
+        <ContainerPort>8989</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Config Name="Sonarr Port" Target="8989" Default="8989" Mode="tcp" Description="Container Port: 8989" Type="Port" Display="always" Required="true" Mask="false"/>
+  <Config Name="Real Time Data" Target="/dev/rtc" Default="/dev/rtc" Mode="ro" Description="Container Path: /dev/rtc" Type="Path" Display="always" Required="true" Mask="false"/>
+  <Config Name="Media Path" Target="/media" Default="" Mode="rw" Description="Container Path: /media" Type="Path" Display="always" Required="true" Mask="false"/>
+  <Config Name="Key 1" Target="PUID" Default="99" Mode="" Description="Container Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false">99</Config>
+  <Config Name="Key 2" Target="PGID" Default="100" Mode="" Description="Container Variable: PGID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
+  <Config Name="traefik.enable" Target="traefik.enable" Default="true" Mode="" Description="Container Label: traefik.enable" Type="Label" Display="always" Required="true" Mask="false">true</Config>
+  <Config Name="traefik.http.routers.sonarr.rule" Target="traefik.http.routers.sonarr.rule" Default="Host(`sonarr.example.com`)" Mode="" Description="Container Label: traefik.http.routers.sonarr.rule=" Type="Label" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="traefik.http.routers.sonarr.middlewares" Target="traefik.http.routers.sonarr.middlewares" Default="secured@file" Mode="" Description="Container Label: traefik.http.routers.sonarr.middlewares" Type="Label" Display="always" Required="true" Mask="false">secured@file</Config>
+  <Config Name="traefik.http.services.sonarr.loadbalancer.server.Port" Target="traefik.http.services.sonarr.loadbalancer.server.Port" Default="8989" Mode="" Description="Container Label: traefik.http.services.sonarr.loadbalancer.server.Port" Type="Label" Display="always" Required="true" Mask="false">8989</Config>
+  <Config Name="traefik.http.routers.sonarr.entrypoints" Target="traefik.http.routers.sonarr.entrypoints" Default="https" Mode="" Description="Container Label: traefik.http.routers.sonarr.entrypoints" Type="Label" Display="always" Required="true" Mask="false">https</Config>
+  <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/sonarr" Mode="rw" Description="Container Path: /config" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/sonarr</Config>
+</Container>

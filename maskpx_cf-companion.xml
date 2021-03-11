@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>cf-companion</Name>
+    <Repository>tiredofit/traefik-cloudflare-companion:latest</Repository>
+    <Registry/>
+    <Network>bridge</Network>
+    <MyIP/>
+    <Shell>sh</Shell>
+    <Privileged>false</Privileged>
+    <Support/>
+    <Project/>
+    <Overview>Companion App for Cloudflare to dynamically update cnames</Overview>
+    <Category>Network:Web Network:Proxy</Category>
+    <TemplateURL>https://raw.githubusercontent.com/maskpx/docker-templates/master/maskpx_cf-companion.xml</TemplateURL>
+    <Description>Companion App for Cloudflare to dynamically update cnames</Description>
+    <Networking>
+        <Mode>bridge</Mode>
+        <Publish/>
+    </Networking>
+    <Config Name="docker.sock" Target="/var/run/docker.sock" Default="/var/run/docker.sock" Mode="ro" Description="Container Path: /var/run/docker.sock" Type="Path" Display="always" Required="true" Mask="false">/var/run/docker.sock</Config>
+    <Config Name="TIMEZONE" Target="TIMEZONE" Default="Europe/Vienna" Mode="" Description="Container Variable: TIMEZONE" Type="Variable" Display="always" Required="true" Mask="false">Europe/Vienna</Config>
+    <Config Name="TRAEFIK_VERSION" Target="TRAEFIK_VERSION" Default="2" Mode="" Description="Which Traefik Version do you use" Type="Variable" Display="always" Required="true" Mask="false">2</Config>
+    <Config Name="CF_EMAIL" Target="CF_EMAIL" Default="someone@mail.com" Mode="" Description="Cloudflare Mail for updating DNS Zones" Type="Variable" Display="always" Required="true" Mask="false">example@gmail.com</Config>
+    <Config Name="CF_TOKEN" Target="CF_TOKEN" Default="&amp;lt;personal-token&amp;gt;" Mode="" Description="Your Cloudflare Token" Type="Variable" Display="always" Required="true" Mask="false"></Config>
+    <Config Name="TARGET_DOMAIN" Target="TARGET_DOMAIN" Default="example.com" Mode="" Description="your domainname" Type="Variable" Display="always" Required="true" Mask="false">example.com</Config>
+    <Config Name="DOMAIN1" Target="DOMAIN1" Default="example.com" Mode="" Description="Again your Domain Name" Type="Variable" Display="always" Required="true" Mask="false">example.com</Config>
+    <Config Name="DOMAIN1_ZONE_ID" Target="DOMAIN1_ZONE_ID" Default="&amp;lt;zone-id&amp;gt;" Mode="" Description="Copy from Cloudflare Overview page" Type="Variable" Display="always" Required="true" Mask="false"></Config>
+    <Config Name="DOMAIN1_PROXIED" Target="DOMAIN1_PROXIED" Default="true" Mode="" Description="If you want to proxy your cname or not" Type="Variable" Display="always" Required="false" Mask="false">true</Config>
+    <Config Name="traefik.http.routers.cf-companion-rtr.rule" Target="traefik.http.routers.cf-companion-rtr.rule" Default="HostHeader(`pihole.example.com`) || HostHeader(`hassio.example.com`)" Mode="" Description=" # Add hosts specified in rules here to force cf-companion to create the CNAMEs&#13;&#10; # Since cf-companion creates CNAMEs based on host rules, this a workaround for non-docker/external apps&#13;&#10;HostHeader(`pihole.example.com`) || HostHeader(`hassio.example.com`)" Type="Label" Display="always" Required="false" Mask="false"></Config>
+</Container>

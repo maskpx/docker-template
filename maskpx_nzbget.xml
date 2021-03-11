@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>nzbget</Name>
+  <Repository>linuxserver/nzbget</Repository>
+  <Registry>https://hub.docker.com/r/linuxserver/nzbget/</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/maskpx/docker-templates</Support>
+  <Project>http://nzbget.net/</Project>
+  <Overview>NZBGet is a usenet downloader, written in C++ and designed with performance in mind to achieve maximum download speed by using very little system resources. It supports all platforms including Windows, Mac, Linux and works on all devices including PC, NAS, WLAN routers and media players</Overview>
+  <Category>Downloaders:</Category>
+  <WebUI>http://[IP]:[PORT:6789]/</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/nzbget.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/nzbget-icon.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1615387954</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>NZBGet is a usenet downloader, written in C++ and designed with performance in mind to achieve maximum download speed by using very little system resources. It supports all platforms including Windows, Mac, Linux and works on all devices including PC, NAS, WLAN routers and media players</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort/>
+        <ContainerPort>6789</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Config Name="Nzbget Port" Target="6789" Default="6789" Mode="tcp" Description="Container Port: 6789" Type="Port" Display="always" Required="true" Mask="false"/>
+  <Config Name="Media Path" Target="/media" Default="" Mode="rw" Description="Container Path: /downloads" Type="Path" Display="always" Required="true" Mask="false"/>
+  <Config Name="Key 1" Target="PUID" Default="99" Mode="" Description="Container Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false">99</Config>
+  <Config Name="Key 2" Target="PGID" Default="100" Mode="" Description="Container Variable: PGID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
+  <Config Name="traefik.enable" Target="traefik.enable" Default="true" Mode="" Description="Container Label: traefik.enable" Type="Label" Display="always" Required="true" Mask="false">true</Config>
+  <Config Name="traefik.http.routers.nzbget.rule" Target="traefik.http.routers.nzbget.rule" Default="Host(`nzbget.example.com`)" Mode="" Description="Container Label: traefik.http.routers.nzbget.rule" Type="Label" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="traefik.http.services.nzbget.loadbalancer.server.port" Target="traefik.http.services.nzbget.loadbalancer.server.port" Default="6789" Mode="" Description="Container Label: traefik.http.services.nzbget.loadbalancer.server.port" Type="Label" Display="always" Required="false" Mask="false">6789</Config>
+  <Config Name="traefik.http.routers.nzbget.middlewares" Target="traefik.http.routers.nzbget.middlewares" Default="secured@file" Mode="" Description="Container Label: traefik.http.routers.nzbget.middlewares" Type="Label" Display="always" Required="false" Mask="false">secured@file</Config>
+  <Config Name="traefik.http.routers.nzbget.entrypoints" Target="traefik.http.routers.nzbget.entrypoints" Default="https" Mode="" Description="Container Label: traefik.http.routers.nzbget.entrypoints" Type="Label" Display="always" Required="false" Mask="false">https</Config>
+  <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/nzbget" Mode="rw" Description="Container Path: /config" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/nzbget</Config>
+</Container>

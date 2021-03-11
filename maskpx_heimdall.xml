@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>heimdall</Name>
+  <Repository>linuxserver/heimdall</Repository>
+  <Registry>https://hub.docker.com/r/linuxserver/heimdall/</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/maskpx/docker-templates</Support>
+  <Project>https://github.com/linuxserver/Heimdall</Project>
+  <Overview>Heimdall is a way to organise all those links to your most used web sites and web applications in a simple way.</Overview>
+  <Category>Tools:Utilities Network:Web Network:Other</Category>
+  <WebUI>http://[IP]:[PORT:80]/</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/heimdall.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/heimdall-icon.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1615390024</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>Heimdall is a way to organise all those links to your most used web sites and web applications in a simple way.</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort/>
+        <ContainerPort>80</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort/>
+        <ContainerPort>443</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Config Name="http port" Target="80" Default="" Mode="tcp" Description="Port for http access" Type="Port" Display="always" Required="false" Mask="false"/>
+  <Config Name="https port" Target="443" Default="" Mode="tcp" Description="Port for https access" Type="Port" Display="always" Required="false" Mask="false"/>
+  <Config Name="appdata" Target="/config" Default="/mnt/user/appdata/heimdall" Mode="rw" Description="appdata location" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/heimdall</Config>
+  <Config Name="PUID" Target="PUID" Default="" Mode="" Description="PUID" Type="Variable" Display="advanced" Required="false" Mask="false">99</Config>
+  <Config Name="PGID" Target="PGID" Default="" Mode="" Description="PGID" Type="Variable" Display="advanced" Required="false" Mask="false">100</Config>
+  <Config Name="traefik.enable" Target="traefik.enable" Default="true" Mode="" Description="Enable Traefik" Type="Label" Display="always" Required="false" Mask="false">true</Config>
+  <Config Name="traefik.http.routers.heimdall.rule" Target="traefik.http.routers.heimdall.rule" Default="Host(`heimdall.example.com`)" Mode="" Description="Container Label: traefik.http.services.heimdall.rule" Type="Label" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="traefik.http.services.heimdall.loadbalancer.server.port" Target="traefik.http.services.heimdall.loadbalancer.server.port" Default="80" Mode="" Description="Container Label: traefik.http.services.heimdall.loadbalancer.server.port" Type="Label" Display="always" Required="false" Mask="false">80</Config>
+  <Config Name="traefik.http.routers.heimdall.middlewares" Target="traefik.http.routers.heimdall.middlewares" Default="secured@file" Mode="" Description="Container Label: traefik.http.routers.heimdall.middlewares" Type="Label" Display="always" Required="false" Mask="false">secured@file</Config>
+  <Config Name="traefik.http.routers.heimdall.entrypoints" Target="traefik.http.routers.heimdall.entrypoints" Default="https" Mode="" Description="Container Label: traefik.http.routers.heimdall.entrypoints" Type="Label" Display="always" Required="false" Mask="false">https</Config>
+</Container>

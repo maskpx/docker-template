@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>binhex-delugevpn</Name>
+    <Repository>binhex/arch-delugevpn</Repository>
+    <Registry>https://registry.hub.docker.com/r/binhex/arch-delugevpn/</Registry>
+    <Network>bridge</Network>
+    <MyIP/>
+    <Shell>sh</Shell>
+    <Privileged>true</Privileged>
+    <Support>http://lime-technology.com/forum/index.php?topic=45812.0</Support>
+    <Project>http://deluge-torrent.org/</Project>
+    <Overview>Deluge is a full-featured &#x200B;BitTorrent client for Linux, OS X, Unix and Windows. It uses &#x200B;libtorrent in its backend and features multiple user-interfaces including: GTK+, web and console. It has been designed using the client server model with a daemon process that handles all the bittorrent activity. The Deluge daemon is able to run on headless machines with the user-interfaces being able to connect remotely from any platform.&#xD;
+    This Docker includes OpenVPN and WireGuard to ensure a secure and private connection to the Internet, including use of iptables to prevent IP leakage when the tunnel is down. It also includes Privoxy to allow unfiltered access to index sites, to use Privoxy please point your application at "http://host ip:8118".</Overview>
+    <Category>Downloaders:</Category>
+    <WebUI>http://[IP]:[PORT:8112]/</WebUI>
+    <TemplateURL>https://raw.githubusercontent.com/binhex/docker-templates/master/binhex/delugevpn.xml</TemplateURL>
+    <Icon>https://raw.githubusercontent.com/binhex/docker-templates/master/binhex/images/deluge-icon.png</Icon>
+    <ExtraParams>--sysctl="net.ipv4.conf.all.src_valid_mark=1"</ExtraParams>
+    <PostArgs/>
+    <CPUset/>
+    <DateInstalled>1614461929</DateInstalled>
+    <DonateText>If you appreciate my work, then please consider buying me a beer :D</DonateText>
+    <DonateLink>https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;amp;hosted_button_id=MM5E27UX6AUU4</DonateLink>
+    <Description>Deluge is a full-featured &#x200B;BitTorrent client for Linux, OS X, Unix and Windows. It uses &#x200B;libtorrent in its backend and features multiple user-interfaces including: GTK+, web and console. It has been designed using the client server model with a daemon process that handles all the bittorrent activity. The Deluge daemon is able to run on headless machines with the user-interfaces being able to connect remotely from any platform.&#xD;
+    This Docker includes OpenVPN and WireGuard to ensure a secure and private connection to the Internet, including use of iptables to prevent IP leakage when the tunnel is down. It also includes Privoxy to allow unfiltered access to index sites, to use Privoxy please point your application at "http://host ip:8118".</Description>
+    <Networking>
+        <Mode>bridge</Mode>
+        <Publish>
+            <Port>
+                <HostPort>8112</HostPort>
+                <ContainerPort>8112</ContainerPort>
+                <Protocol>tcp</Protocol>
+            </Port>
+            <Port>
+                <HostPort>58846</HostPort>
+                <ContainerPort>58846</ContainerPort>
+                <Protocol>tcp</Protocol>
+            </Port>
+            <Port>
+                <HostPort>58946</HostPort>
+                <ContainerPort>58946</ContainerPort>
+                <Protocol>tcp</Protocol>
+            </Port>
+            <Port>
+                <HostPort>58946</HostPort>
+                <ContainerPort>58946</ContainerPort>
+                <Protocol>udp</Protocol>
+            </Port>
+            <Port>
+                <HostPort>8118</HostPort>
+                <ContainerPort>8118</ContainerPort>
+                <Protocol>tcp</Protocol>
+            </Port>
+        </Publish>
+    </Networking>
+    <Config Name="Host Port 1" Target="8112" Default="8112" Mode="tcp" Description="Container Port: 8112" Type="Port" Display="always" Required="true" Mask="false">8112</Config>
+    <Config Name="Host Port 2" Target="58846" Default="58846" Mode="tcp" Description="Container Port: 58846" Type="Port" Display="always" Required="true" Mask="false">58846</Config>
+    <Config Name="Host Port 3" Target="58946" Default="58946" Mode="tcp" Description="Container Port: 58946" Type="Port" Display="always" Required="true" Mask="false">58946</Config>
+    <Config Name="Host Port 4" Target="58946" Default="58946" Mode="udp" Description="Container Port: 58946" Type="Port" Display="always" Required="true" Mask="false">58946</Config>
+    <Config Name="Host Port 5" Target="8118" Default="8118" Mode="tcp" Description="Container Port: 8118" Type="Port" Display="always" Required="true" Mask="false">8118</Config>
+    <Config Name="Host Path 2" Target="/data" Default="/mnt/user/appdata/data" Mode="rw" Description="Container Path: /data" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/data</Config>
+    <Config Name="Key 1" Target="VPN_ENABLED" Default="yes|no" Mode="" Description="Container Variable: VPN_ENABLED" Type="Variable" Display="always" Required="false" Mask="false">yes</Config>
+    <Config Name="Key 2" Target="VPN_USER" Default="vpn username" Mode="" Description="Container Variable: VPN_USER" Type="Variable" Display="always" Required="false" Mask="false">vpn username</Config>
+    <Config Name="Key 3" Target="VPN_PASS" Default="vpn password" Mode="" Description="Container Variable: VPN_PASS" Type="Variable" Display="always" Required="false" Mask="false">vpn password</Config>
+    <Config Name="Key 4" Target="VPN_PROV" Default="pia|airvpn|custom" Mode="" Description="Container Variable: VPN_PROV" Type="Variable" Display="always" Required="false" Mask="false">custom</Config>
+    <Config Name="Key 5" Target="VPN_CLIENT" Default="openvpn|wireguard" Mode="" Description="Container Variable: VPN_CLIENT" Type="Variable" Display="always" Required="false" Mask="false">wireguard</Config>
+    <Config Name="Key 6" Target="VPN_OPTIONS" Default="" Mode="" Description="Container Variable: VPN_OPTIONS" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Key 7" Target="STRICT_PORT_FORWARD" Default="yes" Mode="" Description="Container Variable: STRICT_PORT_FORWARD" Type="Variable" Display="always" Required="false" Mask="false">yes</Config>
+    <Config Name="Key 8" Target="ENABLE_PRIVOXY" Default="no|yes" Mode="" Description="Container Variable: ENABLE_PRIVOXY" Type="Variable" Display="always" Required="false" Mask="false">yes</Config>
+    <Config Name="Key 9" Target="LAN_NETWORK" Default="192.168.1.0/24" Mode="" Description="Container Variable: LAN_NETWORK" Type="Variable" Display="always" Required="false" Mask="false">192.168.1.0/24</Config>
+    <Config Name="Key 10" Target="NAME_SERVERS" Default="209.222.18.222,84.200.69.80,37.235.1.174,1.1.1.1,209.222.18.218,37.235.1.177,84.200.70.40,1.0.0.1" Mode="" Description="Container Variable: NAME_SERVERS" Type="Variable" Display="always" Required="false" Mask="false">209.222.18.222,84.200.69.80,37.235.1.174,1.1.1.1,209.222.18.218,37.235.1.177,84.200.70.40,1.0.0.1</Config>
+    <Config Name="Key 11" Target="DELUGE_DAEMON_LOG_LEVEL" Default="info" Mode="" Description="Container Variable: DELUGE_DAEMON_LOG_LEVEL" Type="Variable" Display="always" Required="false" Mask="false">info</Config>
+    <Config Name="Key 12" Target="DELUGE_WEB_LOG_LEVEL" Default="info" Mode="" Description="Container Variable: DELUGE_WEB_LOG_LEVEL" Type="Variable" Display="always" Required="false" Mask="false">info</Config>
+    <Config Name="Key 13" Target="ADDITIONAL_PORTS" Default="" Mode="" Description="Container Variable: ADDITIONAL_PORTS" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="Key 14" Target="DEBUG" Default="false|true" Mode="" Description="Container Variable: DEBUG" Type="Variable" Display="always" Required="false" Mask="false">false</Config>
+    <Config Name="Key 15" Target="UMASK" Default="000" Mode="" Description="Container Variable: UMASK" Type="Variable" Display="always" Required="false" Mask="false">000</Config>
+    <Config Name="Key 16" Target="PUID" Default="99" Mode="" Description="Container Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false">99</Config>
+    <Config Name="Key 17" Target="PGID" Default="100" Mode="" Description="Container Variable: PGID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
+    <Config Name="traefik.enable" Target="traefik.enable" Default="true" Mode="" Description="Enable Traefik" Type="Label" Display="always" Required="false" Mask="false">true</Config>
+    <Config Name="traefik.http.routers.delugevpn.rule" Target="traefik.http.routers.delugevpn.rule" Default="Host(`delugevpn.example.com`)" Mode="" Description="Container Label: traefik.http.services.delugevpn.rule" Type="Label" Display="always" Required="false" Mask="false"></Config>
+    <Config Name="traefik.http.services.delugevpn.loadbalancer.server.port" Target="traefik.http.services.delugevpn.loadbalancer.server.port" Default="8112" Mode="" Description="Container Label: traefik.http.services.delugevpn.loadbalancer.server.port" Type="Label" Display="always" Required="false" Mask="false">8112</Config>
+    <Config Name="traefik.http.routers.delugevpn.middlewares" Target="traefik.http.routers.delugevpn.middlewares" Default="secured@file" Mode="" Description="Container Label: traefik.http.routers.delugevpn.middlewares" Type="Label" Display="always" Required="false" Mask="false">secured@file</Config>
+    <Config Name="traefik.http.routers.delugevpn.entrypoints" Target="traefik.http.routers.delugevpn.entrypoints" Default="https" Mode="" Description="Container Label: traefik.http.routers.delugevpn.entrypoints" Type="Label" Display="always" Required="false" Mask="false">https</Config>
+    <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/binhex-delugevpn" Mode="rw" Description="Container Path: /config" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/binhex-delugevpn</Config>
+</Container>

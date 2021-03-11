@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>wetty</Name>
+    <Repository>krishnasrinivas/wetty</Repository>
+    <Registry>https://hub.docker.com/r/butlerx/wetty/</Registry>
+    <Network>host</Network>
+    <MyIP/>
+    <Shell>sh</Shell>
+    <Privileged>false</Privileged>
+    <Support>https://hub.docker.com/r/butlerx/wetty/</Support>
+    <Project>https://github.com/butlerx/wetty</Project>
+    <Overview>HTTP based ssh gateway   Converted By Community Applications   Always verify this template (and values) against the dockerhub support page for the container</Overview>
+    <Category/>
+    <WebUI>http://[IP]:[PORT::3000]</WebUI>
+    <TemplateURL/>
+    <Icon>/plugins/dynamix.docker.manager/images/question.png</Icon>
+    <ExtraParams/>
+    <PostArgs/>
+    <CPUset/>
+    <DateInstalled>1614101520</DateInstalled>
+    <DonateText/>
+    <DonateLink/>
+    <Description>HTTP based ssh gateway   Converted By Community Applications   Always verify this template (and values) against the dockerhub support page for the container</Description>
+    <Networking>
+        <Mode>host</Mode>
+        <Publish>
+            <Port>
+                <HostPort/>
+                <ContainerPort>3000</ContainerPort>
+                <Protocol>tcp</Protocol>
+            </Port>
+        </Publish>
+    </Networking>
+    <Config Name="localtime" Target="/etc/localtime" Default="/etc/localtime" Mode="ro" Description="Localtime from Server" Type="Path" Display="advanced" Required="true" Mask="false">/etc/localtime</Config>
+    <Config Name="Port" Target="3000" Default="3000" Mode="tcp" Description="Webgui Port of Wetty" Type="Port" Display="always" Required="false" Mask="false"/>
+    <Config Name="traefik.enable" Target="traefik.enable" Default="true" Mode="" Description="Enable Traefik" Type="Label" Display="always" Required="false" Mask="false">true</Config>
+    <Config Name="traefik.http.routers.wetty.rule" Target="traefik.http.routers.wetty.rule" Default="Host(`wetty.example.com`)" Mode="" Description="Container Label: traefik.http.services.wetty.rule" Type="Label" Display="always" Required="false" Mask="false"></Config>
+    <Config Name="traefik.http.services.wetty.loadbalancer.server.port" Target="traefik.http.services.wetty.loadbalancer.server.port" Default="3000" Mode="" Description="Container Label: traefik.http.services.wetty.loadbalancer.server.port" Type="Label" Display="always" Required="false" Mask="false">3000</Config>
+    <Config Name="traefik.http.routers.wetty.middlewares" Target="traefik.http.routers.wetty.middlewares" Default="secured@file" Mode="" Description="Container Label: traefik.http.routers.wetty.middlewares" Type="Label" Display="always" Required="false" Mask="false">secured@file</Config>
+    <Config Name="traefik.http.routers.wetty.entrypoints" Target="traefik.http.routers.wetty.entrypoints" Default="https" Mode="" Description="Container Label: traefik.http.routers.wetty.entrypoints" Type="Label" Display="always" Required="false" Mask="false">https</Config>
+    <Config Name="SSH-Host" Target="SSHHOST" Default="" Mode="" Description="Here should be the Server where you want to connect" Type="Variable" Display="always" Required="false" Mask="false"/>
+    <Config Name="SSH-USER" Target="SSHUSER" Default="" Mode="" Description="User for Login" Type="Variable" Display="always" Required="false" Mask="false"/>
+</Container>

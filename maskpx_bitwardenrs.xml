@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>bitwarden</Name>
+  <Repository>bitwardenrs/server</Repository>
+  <Registry>https://hub.docker.com/r/bitwardenrs/server/</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/maskpx/docker-templates</Support>
+  <Project>https://github.com/dani-garcia/bitwarden_rs/</Project>
+  <Overview>This is a Bitwarden server API implementation written in Rust compatible with upstream Bitwarden clients, perfect for self-hosted deployment where running the official resource-heavy service might not be ideal.&#xD;
+    [br][br]&#xD;
+    Basically full implementation of Bitwarden API is provided including: &#xD;
+    [br][br]&#xD;
+    -Basic single user functionality&#xD;
+    [br]&#xD;
+    -Organizations support&#xD;
+    [br]&#xD;
+    -Attachments&#xD;
+    [br]&#xD;
+    -Vault API support&#xD;
+    [br]&#xD;
+    -Serving the static files for Vault interface&#xD;
+    [br]&#xD;
+    -Website icons API&#xD;
+    [br]&#xD;
+    -Authenticator and U2F support&#xD;
+    [br]&#xD;
+    -YubiKey OTP&#xD;
+    [br][br]&#xD;
+    For more configuration see the wiki&#xD;
+    [br]&#xD;
+    https://github.com/dani-garcia/bitwarden_rs/wiki&#xD;
+  </Overview>
+  <Category>Tools:Utilities</Category>
+  <WebUI>http://[IP]:[PORT:80]</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/selfhosters/unRAID-CA-templates/master/templates/bitwardenrs.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/selfhosters/unRAID-CA-templates/master/templates/img/bitwardenrs.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1615402578</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>This is a Bitwarden server API implementation written in Rust compatible with upstream Bitwarden clients, perfect for self-hosted deployment where running the official resource-heavy service might not be ideal.&#xD;
+    [br][br]&#xD;
+    Basically full implementation of Bitwarden API is provided including: &#xD;
+    [br][br]&#xD;
+    -Basic single user functionality&#xD;
+    [br]&#xD;
+    -Organizations support&#xD;
+    [br]&#xD;
+    -Attachments&#xD;
+    [br]&#xD;
+    -Vault API support&#xD;
+    [br]&#xD;
+    -Serving the static files for Vault interface&#xD;
+    [br]&#xD;
+    -Website icons API&#xD;
+    [br]&#xD;
+    -Authenticator and U2F support&#xD;
+    [br]&#xD;
+    -YubiKey OTP&#xD;
+    [br][br]&#xD;
+    For more configuration see the wiki&#xD;
+    [br]&#xD;
+    https://github.com/dani-garcia/bitwarden_rs/wiki&#xD;
+  </Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>8001</HostPort>
+        <ContainerPort>80</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Config Name="WebUI HTTP Port" Target="80" Default="" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always" Required="true" Mask="false">8001</Config>
+  <Config Name="SERVER_ADMIN_EMAIL" Target="SERVER_ADMIN_EMAIL" Default="me@domain.com" Mode="{3}" Description="Container Variable: Server Admin E-Mail" Type="Variable" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="SIGNUPS_ALLOWED" Target="SIGNUPS_ALLOWED" Default="true|false" Mode="{3}" Description="Container Variable: Signups" Type="Variable" Display="always" Required="false" Mask="false">true</Config>
+  <Config Name="INVITATIONS_ALLOWED" Target="INVITATIONS_ALLOWED" Default="true|false" Mode="{3}" Description="Container Variable: Invitations" Type="Variable" Display="always" Required="false" Mask="false">true</Config>
+  <Config Name="WEBSOCKET_ENABLED" Target="WEBSOCKET_ENABLED" Default="true" Mode="{3}" Description="Container Variable: Websockets Enabled" Type="Variable" Display="always" Required="false" Mask="false">true</Config>
+  <Config Name="ADMIN_TOKEN" Target="ADMIN_TOKEN" Default="" Mode="{3}" Description="Container Variable: ADMIN_TOKEN" Type="Variable" Display="always" Required="true" Mask="true"></Config>
+  <Config Name="traefik.enable" Target="traefik.enable" Default="true" Mode="" Description="Enable Traefik" Type="Label" Display="always" Required="false" Mask="false">true</Config>
+  <Config Name="traefik.http.routers.bitwarden-ui.rule" Target="traefik.http.routers.bitwarden-ui.rule" Default="Host(`bitwarden.example.com`)" Mode="" Description="Container Label: traefik.http.services.bitwarden-ui.rule" Type="Label" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="traefik.http.services.bitwarden-ui.loadbalancer.server.port" Target="traefik.http.services.bitwarden-ui.loadbalancer.server.port" Default="80" Mode="" Description="Container Label: traefik.http.services.bitwarden-ui.loadbalancer.server.port" Type="Label" Display="always" Required="false" Mask="false">80</Config>
+  <Config Name="traefik.http.routers.bitwarden-ui.service" Target="traefik.http.routers.bitwarden-ui.service" Default="bitwarden-ui" Mode="" Description="Container Label: traefik.http.routers.bitwarden-ui.service" Type="Label" Display="always" Required="false" Mask="false">bitwarden-ui</Config>
+  <Config Name="traefik.http.routers.bitwarden-ui.entrypoints" Target="traefik.http.routers.bitwarden-ui.entrypoints" Default="https" Mode="" Description="Container Label: traefik.http.routers.bitwarden-ui.entrypoints" Type="Label" Display="always" Required="false" Mask="false">https</Config>
+  <Config Name="traefik.http.routers.bitwarden-websocket.rule" Target="traefik.http.routers.bitwarden-websocket.rule" Default="Host(`bitwarden.example.com`) &amp;&amp; Path(`/notifications/hub`)" Mode="" Description="Container Label: traefik.http.routers.bitwarden-websocket.rule set a double AND between host and path" Type="Label" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="traefik.http.services.bitwarden-websocket.loadbalancer.server.port" Target="traefik.http.services.bitwarden-websocket.loadbalancer.server.port" Default="3012" Mode="" Description="Container Label: traefik.http.services.bitwarden-websocket.loadbalancer.server.port" Type="Label" Display="always" Required="false" Mask="false">3012</Config>
+  <Config Name="traefik.http.routers.bitwarden-websocket.service" Target="traefik.http.routers.bitwarden-websocket.service" Default="bitwarden-websocket" Mode="" Description="Container Label: traefik.http.routers.bitwarden-ui.service" Type="Label" Display="always" Required="false" Mask="false">bitwarden-websocket</Config>
+  <Config Name="traefik.http.routers.bitwarden-websocket.entrypoints" Target="traefik.http.routers.bitwarden-websocket.entrypoints" Default="https" Mode="" Description="Container Label: traefik.http.routers.bitwarden-websocket.entrypoints" Type="Label" Display="always" Required="false" Mask="false">https</Config>
+  <Config Name="Storage" Target="/data" Default="/mnt/user/appdata/bitwarden" Mode="rw" Description="Container Path: /data" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/bitwarden</Config>
+</Container>
