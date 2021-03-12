@@ -7,7 +7,7 @@
     <MyIP/>
     <Shell>sh</Shell>
     <Privileged>false</Privileged>
-    <Support>https://github.com/maskpx/docker-templates/issues</Support>
+    <Support>https://github.com/maskpx/docker-template/issues</Support>
     <Project/>
     <Overview>Authelia Auth service</Overview>
     <Category>Network:Web, Network:Auth</Category>

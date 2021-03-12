@@ -7,7 +7,7 @@
     <MyIP/>
     <Shell>bash</Shell>
     <Privileged>false</Privileged>
-    <Support>https://github.com/maskpx/docker-templates/issues</Support>
+    <Support>https://github.com/maskpx/docker-template/issues</Support>
     <Project>https://github.com/shirosaidev/diskover</Project>
     <Overview>diskover is a file system crawler and disk space usage software that uses Elasticsearch to index and manage data across heterogeneous storage systems.[br]&#xD;
 Elasticsearch is needed for this container. Use 5.6.x.</Overview>

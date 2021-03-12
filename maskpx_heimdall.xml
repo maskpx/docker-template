@@ -7,7 +7,7 @@
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
-  <Support>https://github.com/maskpx/docker-templates</Support>
+  <Support>https://github.com/maskpx/docker-template/issues</Support>
   <Project>https://github.com/linuxserver/Heimdall</Project>
   <Overview>Heimdall is a way to organise all those links to your most used web sites and web applications in a simple way.</Overview>
   <Category>Tools:Utilities Network:Web Network:Other</Category>

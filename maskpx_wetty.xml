@@ -4,22 +4,15 @@
     <Repository>krishnasrinivas/wetty</Repository>
     <Registry>https://hub.docker.com/r/butlerx/wetty/</Registry>
     <Network>host</Network>
-    <MyIP/>
     <Shell>sh</Shell>
     <Privileged>false</Privileged>
-    <Support>https://hub.docker.com/r/butlerx/wetty/</Support>
+    <Support>https://github.com/maskpx/docker-template/issues</Support>
     <Project>https://github.com/butlerx/wetty</Project>
     <Overview>HTTP based ssh gateway   Converted By Community Applications   Always verify this template (and values) against the dockerhub support page for the container</Overview>
     <Category/>
     <WebUI>http://[IP]:[PORT::3000]</WebUI>
     <TemplateURL>https://raw.githubusercontent.com/maskpx/docker-template/master/maskpx_wetty.xml</TemplateURL>
     <Icon>https://raw.githubusercontent.com/maskpx/docker-template/master/img/wetty.png</Icon>
-    <ExtraParams/>
-    <PostArgs/>
-    <CPUset/>
-    <DateInstalled>1614101520</DateInstalled>
-    <DonateText/>
-    <DonateLink/>
     <Description>HTTP based ssh gateway   Converted By Community Applications   Always verify this template (and values) against the dockerhub support page for the container</Description>
     <Networking>
         <Mode>host</Mode>

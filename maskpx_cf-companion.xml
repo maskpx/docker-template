@@ -7,7 +7,7 @@
     <MyIP/>
     <Shell>sh</Shell>
     <Privileged>false</Privileged>
-    <Support/>
+    <Support>https://github.com/maskpx/docker-template/issues</Support>
     <Project/>
     <Overview>Companion App for Cloudflare to dynamically update cnames</Overview>
     <Category>Network:Web Network:Proxy</Category>

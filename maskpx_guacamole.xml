@@ -7,7 +7,7 @@
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>true</Privileged>
-  <Support>https://github.com/maskpx/docker-templates</Support>
+  <Support>https://github.com/maskpx/docker-template/issues</Support>
   <Project>https://guacamole.apache.org/</Project>
   <Overview>&#xD;
     [h3]Apache Guacamole[/h3]Apache Guacamole is a clientless remote desktop gateway. It supports standard protocols like VNC and RDP.[br][br]&#xD;

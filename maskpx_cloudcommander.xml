@@ -7,7 +7,7 @@
     <MyIP/>
     <Shell>sh</Shell>
     <Privileged>false</Privileged>
-    <Support>http://lime-technology.com/forum/index.php?topic=55931.0</Support>
+    <Support>https://github.com/maskpx/docker-template/issues</Support>
     <Project/>
     <Overview>&#xD;
 [b]CloudCommander[/b] is a simple web file browser with a built in text editor and archive compress/extract abilities.[br/]&#xD;
