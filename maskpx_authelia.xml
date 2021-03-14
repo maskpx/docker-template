@@ -4,7 +4,6 @@
     <Repository>authelia/authelia</Repository>
     <Registry>https://hub.docker.com/r/authelia/authelia/</Registry>
     <Network>bridge</Network>
-    <MyIP/>
     <Shell>sh</Shell>
     <Privileged>false</Privileged>
     <Support>https://github.com/maskpx/docker-template/issues</Support>
