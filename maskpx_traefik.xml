@@ -4,43 +4,16 @@
     <Repository>traefik:latest</Repository>
     <Registry>https://registry.hub.docker.com/_/traefik</Registry>
     <Network>host</Network>
-    <MyIP/>
     <Shell>sh</Shell>
     <Privileged>false</Privileged>
     <Support>https://github.com/maskpx/docker-template/issues</Support>
-    <Project/>
+    <Project>https://traefik.io/traefik/</Project>
     <Overview>Traefik is a modern reverse-proxy.</Overview>
     <Category>Network:Web, Network:Proxy</Category>
     <WebUI>http://[IP]:[PORT:8090]</WebUI>
     <TemplateURL>https://raw.githubusercontent.com/maskpx/docker-template/master/maskpx_traefik.xml</TemplateURL>
     <Icon>https://raw.githubusercontent.com/Zeropointer11/docker-templates/master/images/traefik.png</Icon>
-    <ExtraParams/>
-    <PostArgs/>
-    <CPUset/>
-    <DateInstalled>1613592437</DateInstalled>
-    <DonateText/>
-    <DonateLink/>
     <Description>Traefik is a modern reverse-proxy.</Description>
-    <Networking>
-        <Mode>host</Mode>
-        <Publish>
-            <Port>
-                <HostPort>8080</HostPort>
-                <ContainerPort>8080</ContainerPort>
-                <Protocol>tcp</Protocol>
-            </Port>
-            <Port>
-                <HostPort>80</HostPort>
-                <ContainerPort>80</ContainerPort>
-                <Protocol>tcp</Protocol>
-            </Port>
-            <Port>
-                <HostPort>443</HostPort>
-                <ContainerPort>443</ContainerPort>
-                <Protocol>tcp</Protocol>
-            </Port>
-        </Publish>
-    </Networking>
     <Config Name="Web Interface Port" Target="8080" Default="8080" Mode="tcp" Description="This is Web UI port you can access via a web browser." Type="Port" Display="always" Required="true" Mask="{8}">8080</Config>
     <Config Name="HTTP Port" Target="80" Default="80" Mode="tcp" Description="HTTP Entry Port" Type="Port" Display="always" Required="true" Mask="{8}">80</Config>
     <Config Name="HTTPS Port" Target="443" Default="443" Mode="tcp" Description="HTTPS Entry Port" Type="Port" Display="always" Required="true" Mask="{8}">443</Config>
