@@ -4,7 +4,6 @@
   <Repository>jasonbean/guacamole</Repository>
   <Registry>https://registry.hub.docker.com/r/jasonbean/guacamole/</Registry>
   <Network>bridge</Network>
-  <MyIP/>
   <Shell>sh</Shell>
   <Privileged>true</Privileged>
   <Support>https://github.com/maskpx/docker-template/issues</Support>
@@ -20,12 +19,6 @@
   <WebUI>http://[IP]:[PORT:8080]/</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/maskpx/docker-template/master/maskpx_guacamole.xml</TemplateURL>
   <Icon>https://i.imgur.com/eflpez4.png</Icon>
-  <ExtraParams/>
-  <PostArgs/>
-  <CPUset/>
-  <DateInstalled>1615413861</DateInstalled>
-  <DonateText/>
-  <DonateLink/>
   <Description>&#xD;
     [h3]Apache Guacamole[/h3]Apache Guacamole is a clientless remote desktop gateway. It supports standard protocols like VNC and RDP.[br][br]&#xD;
     [b][span style='color: #E80000;']Directions:[/span][/b][br]&#xD;
@@ -33,16 +26,6 @@
     [b]/config[/b] : this path is where Apache Guacamole will store it's properties files, extensions, and the database which contains data for users and connections.[br]&#xD;
     Initial username and password are [b]guacadmin[/b]&#xD;
   </Description>
-  <Networking>
-    <Mode>bridge</Mode>
-    <Publish>
-      <Port>
-        <HostPort/>
-        <ContainerPort>8080</ContainerPort>
-        <Protocol>tcp</Protocol>
-      </Port>
-    </Publish>
-  </Networking>
   <Config Name="Web Port" Target="8080" Default="8080" Mode="tcp" Description="Container Port: 8080" Type="Port" Display="always" Required="true" Mask="false"/>
   <Config Name="OPT_MYSQL" Target="OPT_MYSQL" Default="Y" Mode="" Description="Container Variable: OPT_MYSQL" Type="Variable" Display="always" Required="false" Mask="false">Y</Config>
   <Config Name="OPT_MYSQL_EXTENSION" Target="OPT_MYSQL_EXTENSION" Default="N" Mode="" Description="Container Variable: OPT_MYSQL_EXTENSION" Type="Variable" Display="always" Required="false" Mask="false">N</Config>
@@ -57,7 +40,7 @@
   <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/ApacheGuacamole" Mode="rw" Description="Container Path: /config" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/ApacheGuacamole</Config>
   <Config Name="PUID" Target="PUID" Default="90" Mode="" Description="Container Variable: PUID" Type="Variable" Display="advanced" Required="false" Mask="false">99</Config>
   <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="Container Variable: PGID" Type="Variable" Display="advanced" Required="false" Mask="false">100</Config>
-    <Config Name="traefik.enable" Target="traefik.enable" Default="true" Mode="" Description="Enable Traefik" Type="Label" Display="always" Required="false" Mask="false">true</Config>
+  <Config Name="traefik.enable" Target="traefik.enable" Default="true" Mode="" Description="Enable Traefik" Type="Label" Display="always" Required="false" Mask="false">true</Config>
   <Config Name="traefik.http.routers.guacamole.rule" Target="traefik.http.routers.guacamole.rule" Default="Host(`guacamole.example.com`)" Mode="" Description="Container Label: traefik.http.services.guacamole.rule" Type="Label" Display="always" Required="false" Mask="false"></Config>
   <Config Name="traefik.http.services.guacamole.loadbalancer.server.port" Target="traefik.http.services.guacamole.loadbalancer.server.port" Default="8080" Mode="" Description="Container Label: traefik.http.services.guacamole.loadbalancer.server.port" Type="Label" Display="always" Required="false" Mask="false">8080</Config>
   <Config Name="traefik.http.routers.guacamole.middlewares" Target="traefik.http.routers.guacamole.middlewares" Default="secured@file" Mode="" Description="Container Label: traefik.http.routers.guacamole.middlewares" Type="Label" Display="always" Required="false" Mask="false">secured@file</Config>

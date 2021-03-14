@@ -4,7 +4,6 @@
     <Repository>jlesage/putty</Repository>
     <Registry>https://hub.docker.com/r/jlesage/putty/</Registry>
     <Network>bridge</Network>
-    <MyIP/>
     <Shell>sh</Shell>
     <Privileged>false</Privileged>
     <Support>https://github.com/maskpx/docker-template/issues</Support>
@@ -24,12 +23,6 @@
     <WebUI>http://[IP]:[PORT:5800]</WebUI>
     <TemplateURL>https://raw.githubusercontent.com/maskpx/docker-template/master/maskpx_putty.xml</TemplateURL>
     <Icon>https://raw.githubusercontent.com/jlesage/docker-templates/master/jlesage/images/putty-icon.png</Icon>
-    <ExtraParams/>
-    <PostArgs/>
-    <CPUset/>
-    <DateInstalled>1613589146</DateInstalled>
-    <DonateText/>
-    <DonateLink>https://paypal.me/JocelynLeSage/0usd</DonateLink>
     <Description>&#xD;
     PuTTY is a free and open-source terminal emulator, serial console and network file transfer application. It supports several network protocols, including SCP, SSH, Telnet, rlogin, and raw socket connection. It can also connect to a serial port.&#xD;
     [br][br]&#xD;
@@ -41,21 +34,6 @@
     [a href="https://github.com/jlesage/docker-putty/blob/master/README.md"]&#xD;
     https://github.com/jlesage/docker-putty/blob/master/README.md[/a].&#xD;
     </Description>
-    <Networking>
-        <Mode>bridge</Mode>
-        <Publish>
-            <Port>
-                <HostPort>7816</HostPort>
-                <ContainerPort>5800</ContainerPort>
-                <Protocol>tcp</Protocol>
-            </Port>
-            <Port>
-                <HostPort>7916</HostPort>
-                <ContainerPort>5900</ContainerPort>
-                <Protocol>tcp</Protocol>
-            </Port>
-        </Publish>
-    </Networking>
     <Config Name="traefik.enable" Target="traefik.enable" Default="true" Mode="" Description="Container Label: traefik.enable" Type="Label" Display="always" Required="true" Mask="false">true</Config>
     <Config Name="Host" Target="traefik.http.routers.putty.rule" Default="Host(`putty.example.com`)" Mode="" Description="Container Label: traefik.http.routers.putty.rule" Type="Label" Display="always" Required="false" Mask="false"></Config>
     <Config Name="Loadbalancer Port" Target="traefik.http.services.putty.loadbalancer.server.port" Default="7816" Mode="" Description="Container Label: traefik.http.services.putty.loadbalancer.server.port" Type="Label" Display="always" Required="false" Mask="false">7816</Config>

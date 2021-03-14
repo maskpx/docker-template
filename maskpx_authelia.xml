@@ -8,23 +8,13 @@
     <Shell>sh</Shell>
     <Privileged>false</Privileged>
     <Support>https://github.com/maskpx/docker-template/issues</Support>
-    <Project/>
+    <Project>https://www.authelia.com/</Project>
     <Overview>Authelia Auth service</Overview>
     <Category>Network:Web, Network:Auth</Category>
     <WebUI>http://[IP]:[PORT:9091]</WebUI>
     <TemplateURL>https://raw.githubusercontent.com/maskpx/docker-template/master/maskpx_authelia.xml</TemplateURL>
     <Icon>https://raw.githubusercontent.com/maskpx/docker-template/master/img/authelia.png</Icon>
     <Description>Authelia Auth service</Description>
-    <Networking>
-        <Mode>bridge</Mode>
-        <Publish>
-            <Port>
-                <HostPort>9091</HostPort>
-                <ContainerPort>9091</ContainerPort>
-                <Protocol>tcp</Protocol>
-            </Port>
-        </Publish>
-    </Networking>
     <Config Name="Web Interface Port" Target="9091" Default="9091" Mode="tcp" Description="This is Web UI port you can access via a web browser." Type="Port" Display="always" Required="true" Mask="{8}">9091</Config>
     <Config Name="Config Storage Path" Target="/config" Default="/mnt/user/appdata/Authelia" Mode="rw" Description="Authelia Config Path /config" Type="Path" Display="always" Required="true" Mask="{8}">/mnt/user/appdata/Authelia</Config>
     <Config Name="Timezone" Target="TZ" Default="Europe/Vienna" Mode="" Description="Container Variable: TZ" Type="Variable" Display="always" Required="false" Mask="false">Europe/Vienna</Config>

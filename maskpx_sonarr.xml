@@ -4,7 +4,6 @@
   <Repository>linuxserver/sonarr:preview</Repository>
   <Registry>https://hub.docker.com/r/linuxserver/sonarr/</Registry>
   <Network>bridge</Network>
-  <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
   <Support>https://github.com/maskpx/docker-template/issues</Support>
@@ -14,23 +13,7 @@
   <WebUI>http://[IP]:[PORT:8989]/</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/maskpx/docker-template/master/maskpx_sonarr.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/sonarr-icon.png</Icon>
-  <ExtraParams/>
-  <PostArgs/>
-  <CPUset/>
-  <DateInstalled>1615385073</DateInstalled>
-  <DonateText/>
-  <DonateLink/>
   <Description>Sonarr (formerly NZBdrone) is a PVR for usenet and bittorrent users. It can monitor multiple RSS feeds for new episodes of your favorite shows and will grab, sort and rename them. It can also be configured to automatically upgrade the quality of files already downloaded when a better quality format becomes available.</Description>
-  <Networking>
-    <Mode>bridge</Mode>
-    <Publish>
-      <Port>
-        <HostPort/>
-        <ContainerPort>8989</ContainerPort>
-        <Protocol>tcp</Protocol>
-      </Port>
-    </Publish>
-  </Networking>
   <Config Name="Sonarr Port" Target="8989" Default="8989" Mode="tcp" Description="Container Port: 8989" Type="Port" Display="always" Required="true" Mask="false"/>
   <Config Name="Real Time Data" Target="/dev/rtc" Default="/dev/rtc" Mode="ro" Description="Container Path: /dev/rtc" Type="Path" Display="always" Required="true" Mask="false"/>
   <Config Name="Media Path" Target="/media" Default="" Mode="rw" Description="Container Path: /media" Type="Path" Display="always" Required="true" Mask="false"/>
