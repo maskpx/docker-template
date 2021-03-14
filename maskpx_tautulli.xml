@@ -13,9 +13,9 @@ Tautulli is a 3rd party application that you can run along side your Plex Media 
 Most importantly, these statistics include what has been watched, who watched it, when and where they watched it, and how it was watched.&#xD;
 All statistics are presented in a nice and clean interface with many tables and graphs, which makes it easy to brag about your server to everyone else.&#xD;
 Configuration&#xD;
-8181 The webui for Tautulli's webui&#xD;
-/config Storing Configuration and the Tautulli database&#xD;
-/logs Map to you plex logs (required for IP logging)&#xD;
+8181 - The webui for Tautulli's webui&#xD;
+/config - Storing Configuration and the Tautulli database&#xD;
+/logs - Map to you plex logs (required for IP logging)&#xD;
 &#xD;
   </Overview>
   <Category>MediaServer:Other Tools:Utilities</Category>
