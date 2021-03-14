@@ -9,27 +9,16 @@
   <Support>https://github.com/maskpx/docker-template/issues</Support>
   <Project>https://github.com/dani-garcia/bitwarden_rs/</Project>
   <Overview>This is a Bitwarden server API implementation written in Rust compatible with upstream Bitwarden clients, perfect for self-hosted deployment where running the official resource-heavy service might not be ideal.&#xD;
-    [br][br]&#xD;
     Basically full implementation of Bitwarden API is provided including: &#xD;
-    [br][br]&#xD;
     -Basic single user functionality&#xD;
-    [br]&#xD;
     -Organizations support&#xD;
-    [br]&#xD;
     -Attachments&#xD;
-    [br]&#xD;
     -Vault API support&#xD;
-    [br]&#xD;
     -Serving the static files for Vault interface&#xD;
-    [br]&#xD;
     -Website icons API&#xD;
-    [br]&#xD;
     -Authenticator and U2F support&#xD;
-    [br]&#xD;
     -YubiKey OTP&#xD;
-    [br][br]&#xD;
     For more configuration see the wiki&#xD;
-    [br]&#xD;
     https://github.com/dani-garcia/bitwarden_rs/wiki&#xD;
   </Overview>
   <Category>Tools:Utilities</Category>
