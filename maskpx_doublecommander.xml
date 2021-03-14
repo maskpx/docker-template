@@ -8,14 +8,14 @@
     <Privileged>false</Privileged>
     <Support>https://github.com/maskpx/docker-template/issues</Support>
     <Project>https://doublecmd.sourceforge.io/</Project>
-    <Overview>Double Commander is a free cross platform open source file manager with two panels side by side. It is inspired by Total Commander and features some new ideas.&#xD;
-    [br]By default the user/pass is abc/abc</Overview>
+    <Overview>
+Double Commander is a free cross platform open source file manager with two panels side by side. It is inspired by Total Commander and features some new ideas.&#xD;
+By default the user/pass is abc/abc&#xD;
+    </Overview>
     <Category>Tools:Utilities</Category>
     <WebUI>http://[IP]:[PORT:3000]</WebUI>
     <TemplateURL>https://raw.githubusercontent.com/maskpx/docker-template/master/maskpx_doublecommander.xml</TemplateURL>
     <Icon>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/doublecommander-icon.png</Icon>
-    <Description>Double Commander is a free cross platform open source file manager with two panels side by side. It is inspired by Total Commander and features some new ideas.&#xD;
-    [br]By default the user/pass is abc/abc</Description>
     <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="Container Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false">99</Config>
     <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="Container Variable: PGID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
     <Config Name="WebUI" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000" Type="Port" Display="always" Required="false" Mask="false">3000</Config>

@@ -12,7 +12,6 @@
     <Category>Network:Web Network:Proxy</Category>
     <TemplateURL>https://raw.githubusercontent.com/maskpx/docker-template/master/maskpx_cf-companion.xml</TemplateURL>
     <Icon>https://raw.githubusercontent.com/maskpx/docker-template/master/img/cloudflare.png</Icon>
-    <Description>Companion App for Cloudflare to dynamically update cnames</Description>
     <Config Name="docker.sock" Target="/var/run/docker.sock" Default="/var/run/docker.sock" Mode="ro" Description="Container Path: /var/run/docker.sock" Type="Path" Display="always" Required="true" Mask="false">/var/run/docker.sock</Config>
     <Config Name="TIMEZONE" Target="TIMEZONE" Default="Europe/Vienna" Mode="" Description="Container Variable: TIMEZONE" Type="Variable" Display="always" Required="true" Mask="false">Europe/Vienna</Config>
     <Config Name="TRAEFIK_VERSION" Target="TRAEFIK_VERSION" Default="2" Mode="" Description="Which Traefik Version do you use" Type="Variable" Display="always" Required="true" Mask="false">2</Config>

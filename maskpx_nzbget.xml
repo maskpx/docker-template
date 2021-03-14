@@ -8,12 +8,14 @@
   <Privileged>false</Privileged>
   <Support>https://github.com/maskpx/docker-template/issues</Support>
   <Project>http://nzbget.net/</Project>
-  <Overview>NZBGet is a usenet downloader, written in C++ and designed with performance in mind to achieve maximum download speed by using very little system resources. It supports all platforms including Windows, Mac, Linux and works on all devices including PC, NAS, WLAN routers and media players</Overview>
+  <Overview>
+NZBGet is a usenet downloader, written in C++ and designed with performance in mind to achieve maximum download speed by using very little system resources.&#xD;
+It supports all platforms including Windows, Mac, Linux and works on all devices including PC, NAS, WLAN routers and media players&#xD;
+  </Overview>
   <Category>Downloaders:</Category>
   <WebUI>http://[IP]:[PORT:6789]/</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/maskpx/docker-template/master/maskpx_nzbget.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/nzbget-icon.png</Icon>
-  <Description>NZBGet is a usenet downloader, written in C++ and designed with performance in mind to achieve maximum download speed by using very little system resources. It supports all platforms including Windows, Mac, Linux and works on all devices including PC, NAS, WLAN routers and media players</Description>
   <Config Name="Nzbget Port" Target="6789" Default="6789" Mode="tcp" Description="Container Port: 6789" Type="Port" Display="always" Required="true" Mask="false"/>
   <Config Name="Media Path" Target="/media" Default="" Mode="rw" Description="Container Path: /downloads" Type="Path" Display="always" Required="true" Mask="false"/>
   <Config Name="Key 1" Target="PUID" Default="99" Mode="" Description="Container Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false">99</Config>

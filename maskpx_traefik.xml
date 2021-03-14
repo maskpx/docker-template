@@ -8,12 +8,28 @@
     <Privileged>false</Privileged>
     <Support>https://github.com/maskpx/docker-template/issues</Support>
     <Project>https://traefik.io/traefik/</Project>
-    <Overview>Traefik is a modern reverse-proxy.</Overview>
+    <Overview>
+Traefik is a modern reverse-proxy.&#xD;
+You must have a traefik.toml or traefik.yml config located in your appdata/traefik directory.&#xD;
+Example template with very little modification needed is available here: https://raw.githubusercontent.com/benderstwin/Portainer-Templates/master/traefik.toml&#xD;
+Note on SSL - easiest method is to use a free account at cloudflare.&#xD;
+In cloudflare: Set up DNS records.&#xD;
+  -use CNAMES for subdomains to point to TLD On the crypto tab in cloudflare&#xD;
+  -request wildcard ssl cert (universal) for edge&#xD;
+  -generate origin cert and key&#xD;
+  -enable SSL client authentication&#xD;
+  -turn on SSL Full (strict)&#xD;
+NOTE: It is possible to use Traefik with ACME (Lets Encrypt).&#xD;
+This will require modification beyond the scope of this template (although you could modify the traefik.toml pretty easily to enable this).&#xD;
+TO ADD APPS TO TRAEFIK:&#xD;
+Traefik uses labels to assign proxy behavior Add these labels to your other containers to enable proxy&#xD;
+Available Labels:&#xD; traefik.enable=true #required to proxy:Enable Traefik to expose app to the frontend&#xD;
+and proxy traefik.backend=ombi #required:name of the container Traefik should map to on the back end (sonarr, radarr, jackett etc...)&#xD; traefik.frontend.rule=Host:ombi.domain.com #required/optional: Sets the subdomain rule.&#xD; traefik.frontend.rule=Host:domain.com; PathPrefixStrip: /ombi #optional for using subfolders&#xD; traefik.port=3579 #required:container port to send traffic to. Source container port, not the mapping in unraid&#xD; traefik.frontend.auth.basic.usersFile=/shared/.htpasswd ## This is what sets up the front end interface to use the generated .htaccess file. Add this line to any site you want additional security on.&#xD; traefik.docker.network=bridge #required: Specify the docker network traefik.frontend.headers.SSLRedirect=true #optional but might as well if you are using SSL traefik.frontend.headers.STSSeconds=315360000 #optional&#xD; traefik.frontend.headers.browserXSSFilter=true #optional&#xD; traefik.frontend.headers.contentTypeNosniff=true #optional&#xD; traefik.frontend.headers.forceSTSHeader=true #may be required&#xD; traefik.frontend.headers.SSLHost=domain.com #required&#xD; traefik.frontend.headers.STSIncludeSubdomains=true #may be required&#xD; traefik.frontend.headers.STSPreload=true #optional traefik.frontend.headers.frameDeny=true #optional&#xD;
+    </Overview>
     <Category>Network:Web, Network:Proxy</Category>
     <WebUI>http://[IP]:[PORT:8090]</WebUI>
     <TemplateURL>https://raw.githubusercontent.com/maskpx/docker-template/master/maskpx_traefik.xml</TemplateURL>
     <Icon>https://raw.githubusercontent.com/Zeropointer11/docker-templates/master/images/traefik.png</Icon>
-    <Description>Traefik is a modern reverse-proxy.</Description>
     <Config Name="Web Interface Port" Target="8080" Default="8080" Mode="tcp" Description="This is Web UI port you can access via a web browser." Type="Port" Display="always" Required="true" Mask="{8}">8080</Config>
     <Config Name="HTTP Port" Target="80" Default="80" Mode="tcp" Description="HTTP Entry Port" Type="Port" Display="always" Required="true" Mask="{8}">80</Config>
     <Config Name="HTTPS Port" Target="443" Default="443" Mode="tcp" Description="HTTPS Entry Port" Type="Port" Display="always" Required="true" Mask="{8}">443</Config>

@@ -8,12 +8,13 @@
   <Privileged>false</Privileged>
   <Support>https://github.com/maskpx/docker-template/issues</Support>
   <Project>https://github.com/Radarr/Radarr</Project>
-  <Overview>Radarr - A fork of Sonarr to work with movies &#xE0; la Couchpotato.</Overview>
+  <Overview>
+Radarr - A fork of Sonarr to work with movies &#xE0; la Couchpotato.&#xD;
+  </Overview>
   <Category>Downloaders: MediaApp:Video</Category>
   <WebUI>http://[IP]:[PORT:7878]</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/maskpx/docker-template/master/maskpx_radarr.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/radarr.png</Icon>
-  <Description>Radarr - A fork of Sonarr to work with movies &#xE0; la Couchpotato.</Description>
   <Config Name="Radarr Port" Target="7878" Default="7878" Mode="tcp" Description="Container Port: 7878" Type="Port" Display="always" Required="true" Mask="false"/>
   <Config Name="Media Path" Target="/media" Default="" Mode="rw" Description="Container Path: /media" Type="Path" Display="always" Required="true" Mask="false"/>
   <Config Name="Key 1" Target="PUID" Default="99" Mode="" Description="Container Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false">99</Config>

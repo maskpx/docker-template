@@ -8,16 +8,15 @@
   <Privileged>false</Privileged>
   <Support>https://github.com/maskpx/docker-template/issues</Support>
   <Project>https://github.com/getferdi/server</Project>
-  <Overview>Ferdi is a hard-fork of Franz, a messaging app for WhatsApp, Slack, Telegram, HipChat, Hangouts and many many more.&#xD;
-  [br][br]&#xD;
-  Ferdi-server is an unofficial replacement of the Franz server for use with the Ferdi Client.</Overview>
+  <Overview>
+Ferdi is a hard-fork of Franz, a messaging app for WhatsApp, Slack, Telegram, HipChat, Hangouts and many many more.&#xD;
+&#xD;
+Ferdi-server is an unofficial replacement of the Franz server for use with the Ferdi Client.&#xD;
+  </Overview>
   <Category>Network:Messenger</Category>
   <WebUI>http://[IP]:[PORT:80]/</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/maskpx/docker-template/master/maskpx_getferdi.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/xthursdayx/docker-templates/master/images/ferdi-icon.png</Icon>
-  <Description>Ferdi is a hard-fork of Franz, a messaging app for WhatsApp, Slack, Telegram, HipChat, Hangouts and many many more.&#xD;
-  [br][br]&#xD;
-  Ferdi-server is an unofficial replacement of the Franz server for use with the Ferdi Client.</Description>
   <Config Name="Port 1" Target="80" Default="80" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always" Required="false" Mask="false">3333</Config>
   <Config Name="NODE_ENV" Target="NODE_ENV" Default="development" Mode="" Description="Container Variable: NODE_ENV" Type="Variable" Display="always" Required="false" Mask="false">development</Config>
   <Config Name="EXTERNAL_DOMAIN" Target="EXTERNAL_DOMAIN" Default="api.example.com" Mode="" Description="Container Variable: EXTERNAL_DOMAIN" Type="Variable" Display="always" Required="false" Mask="false"/>
