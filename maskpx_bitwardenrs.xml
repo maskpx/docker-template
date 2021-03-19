@@ -4,79 +4,27 @@
   <Repository>bitwardenrs/server</Repository>
   <Registry>https://hub.docker.com/r/bitwardenrs/server/</Registry>
   <Network>bridge</Network>
-  <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
   <Support>https://github.com/maskpx/docker-template/issues</Support>
   <Project>https://github.com/dani-garcia/bitwarden_rs/</Project>
   <Overview>This is a Bitwarden server API implementation written in Rust compatible with upstream Bitwarden clients, perfect for self-hosted deployment where running the official resource-heavy service might not be ideal.&#xD;
-    [br][br]&#xD;
-    Basically full implementation of Bitwarden API is provided including: &#xD;
-    [br][br]&#xD;
+Basically full implementation of Bitwarden API is provided including: &#xD;
     -Basic single user functionality&#xD;
-    [br]&#xD;
     -Organizations support&#xD;
-    [br]&#xD;
     -Attachments&#xD;
-    [br]&#xD;
     -Vault API support&#xD;
-    [br]&#xD;
     -Serving the static files for Vault interface&#xD;
-    [br]&#xD;
     -Website icons API&#xD;
-    [br]&#xD;
     -Authenticator and U2F support&#xD;
-    [br]&#xD;
     -YubiKey OTP&#xD;
-    [br][br]&#xD;
-    For more configuration see the wiki&#xD;
-    [br]&#xD;
-    https://github.com/dani-garcia/bitwarden_rs/wiki&#xD;
+For more configuration see the wiki&#xD;
+https://github.com/dani-garcia/bitwarden_rs/wiki&#xD;
   </Overview>
   <Category>Tools:Utilities</Category>
   <WebUI>http://[IP]:[PORT:80]</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/maskpx/docker-template/master/maskpx_bitwardenrs.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/selfhosters/unRAID-CA-templates/master/templates/img/bitwardenrs.png</Icon>
-  <ExtraParams/>
-  <PostArgs/>
-  <CPUset/>
-  <DateInstalled>1615402578</DateInstalled>
-  <DonateText/>
-  <DonateLink/>
-  <Description>This is a Bitwarden server API implementation written in Rust compatible with upstream Bitwarden clients, perfect for self-hosted deployment where running the official resource-heavy service might not be ideal.&#xD;
-    [br][br]&#xD;
-    Basically full implementation of Bitwarden API is provided including: &#xD;
-    [br][br]&#xD;
-    -Basic single user functionality&#xD;
-    [br]&#xD;
-    -Organizations support&#xD;
-    [br]&#xD;
-    -Attachments&#xD;
-    [br]&#xD;
-    -Vault API support&#xD;
-    [br]&#xD;
-    -Serving the static files for Vault interface&#xD;
-    [br]&#xD;
-    -Website icons API&#xD;
-    [br]&#xD;
-    -Authenticator and U2F support&#xD;
-    [br]&#xD;
-    -YubiKey OTP&#xD;
-    [br][br]&#xD;
-    For more configuration see the wiki&#xD;
-    [br]&#xD;
-    https://github.com/dani-garcia/bitwarden_rs/wiki&#xD;
-  </Description>
-  <Networking>
-    <Mode>bridge</Mode>
-    <Publish>
-      <Port>
-        <HostPort>8001</HostPort>
-        <ContainerPort>80</ContainerPort>
-        <Protocol>tcp</Protocol>
-      </Port>
-    </Publish>
-  </Networking>
   <Config Name="WebUI HTTP Port" Target="80" Default="" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always" Required="true" Mask="false">8001</Config>
   <Config Name="SERVER_ADMIN_EMAIL" Target="SERVER_ADMIN_EMAIL" Default="me@domain.com" Mode="{3}" Description="Container Variable: Server Admin E-Mail" Type="Variable" Display="always" Required="true" Mask="false"></Config>
   <Config Name="SIGNUPS_ALLOWED" Target="SIGNUPS_ALLOWED" Default="true|false" Mode="{3}" Description="Container Variable: Signups" Type="Variable" Display="always" Required="false" Mask="false">true</Config>

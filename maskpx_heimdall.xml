@@ -4,38 +4,17 @@
   <Repository>linuxserver/heimdall</Repository>
   <Registry>https://hub.docker.com/r/linuxserver/heimdall/</Registry>
   <Network>bridge</Network>
-  <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
   <Support>https://github.com/maskpx/docker-template/issues</Support>
   <Project>https://github.com/linuxserver/Heimdall</Project>
-  <Overview>Heimdall is a way to organise all those links to your most used web sites and web applications in a simple way.</Overview>
+  <Overview>
+Heimdall is a way to organise all those links to your most used web sites and web applications in a simple way.&#xD;
+  </Overview>
   <Category>Tools:Utilities Network:Web Network:Other</Category>
   <WebUI>http://[IP]:[PORT:80]/</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/maskpx/docker-template/master/maskpx_heimdall.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/heimdall-icon.png</Icon>
-  <ExtraParams/>
-  <PostArgs/>
-  <CPUset/>
-  <DateInstalled>1615390024</DateInstalled>
-  <DonateText/>
-  <DonateLink/>
-  <Description>Heimdall is a way to organise all those links to your most used web sites and web applications in a simple way.</Description>
-  <Networking>
-    <Mode>bridge</Mode>
-    <Publish>
-      <Port>
-        <HostPort/>
-        <ContainerPort>80</ContainerPort>
-        <Protocol>tcp</Protocol>
-      </Port>
-      <Port>
-        <HostPort/>
-        <ContainerPort>443</ContainerPort>
-        <Protocol>tcp</Protocol>
-      </Port>
-    </Publish>
-  </Networking>
   <Config Name="http port" Target="80" Default="" Mode="tcp" Description="Port for http access" Type="Port" Display="always" Required="false" Mask="false"/>
   <Config Name="https port" Target="443" Default="" Mode="tcp" Description="Port for https access" Type="Port" Display="always" Required="false" Mask="false"/>
   <Config Name="appdata" Target="/config" Default="/mnt/user/appdata/heimdall" Mode="rw" Description="appdata location" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/heimdall</Config>

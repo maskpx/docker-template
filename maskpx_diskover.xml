@@ -4,45 +4,18 @@
     <Repository>linuxserver/diskover</Repository>
     <Registry>https://hub.docker.com/r/linuxserver/diskover</Registry>
     <Network>bridge</Network>
-    <MyIP/>
     <Shell>bash</Shell>
     <Privileged>false</Privileged>
     <Support>https://github.com/maskpx/docker-template/issues</Support>
     <Project>https://github.com/shirosaidev/diskover</Project>
-    <Overview>diskover is a file system crawler and disk space usage software that uses Elasticsearch to index and manage data across heterogeneous storage systems.[br]&#xD;
-Elasticsearch is needed for this container. Use 5.6.x.</Overview>
+    <Overview>
+diskover is a file system crawler and disk space usage software that uses Elasticsearch to index and manage data across heterogeneous storage systems.&#xD;
+Elasticsearch is needed for this container. Use 5.6.x.&#xD;
+    </Overview>
     <Category>Tools:Utilities</Category>
     <WebUI>http://[IP]:[PORT:80]</WebUI>
     <TemplateURL>https://raw.githubusercontent.com/maskpx/docker-template/master/maskpx_diskover.xml</TemplateURL>
     <Icon>https://raw.githubusercontent.com/shirosaidev/diskover/master/docs/diskover.png</Icon>
-    <ExtraParams/>
-    <PostArgs/>
-    <CPUset/>
-    <DateInstalled>1613886538</DateInstalled>
-    <DonateText>Donations</DonateText>
-    <DonateLink>https://www.linuxserver.io/donate</DonateLink>
-    <Description>diskover is a file system crawler and disk space usage software that uses Elasticsearch to index and manage data across heterogeneous storage systems.[br]&#xD;
-Elasticsearch is needed for this container. Use 5.6.x.</Description>
-    <Networking>
-        <Mode>bridge</Mode>
-        <Publish>
-            <Port>
-                <HostPort>9181</HostPort>
-                <ContainerPort>9181</ContainerPort>
-                <Protocol>tcp</Protocol>
-            </Port>
-            <Port>
-                <HostPort>9999</HostPort>
-                <ContainerPort>9999</ContainerPort>
-                <Protocol>tcp</Protocol>
-            </Port>
-            <Port>
-                <HostPort>8080</HostPort>
-                <ContainerPort>80</ContainerPort>
-                <Protocol>tcp</Protocol>
-            </Port>
-        </Publish>
-    </Networking>
     <Config Name="rq-dashboard web UI" Target="9181" Default="9181" Mode="tcp" Description="Container Port: 9181" Type="Port" Display="always" Required="true" Mask="false">9181</Config>
     <Config Name="diskover socket server" Target="9999" Default="9999" Mode="tcp" Description="Container Port: 9999" Type="Port" Display="always" Required="true" Mask="false">9999</Config>
     <Config Name="Redis host" Target="REDIS_HOST" Default="" Mode="" Description="Container Variable: REDIS_HOST" Type="Variable" Display="always" Required="false" Mask="false"/>

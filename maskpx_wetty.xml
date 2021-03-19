@@ -8,12 +8,15 @@
     <Privileged>false</Privileged>
     <Support>https://github.com/maskpx/docker-template/issues</Support>
     <Project>https://github.com/butlerx/wetty</Project>
-    <Overview>HTTP based ssh gateway   Converted By Community Applications   Always verify this template (and values) against the dockerhub support page for the container</Overview>
+    <Overview>
+HTTP based ssh gateway&#xD;
+Converted By Community Applications&#xD;
+Always verify this template (and values) against the dockerhub support page for the container
+    </Overview>
     <Category>Network:Other Tools:Utilities</Category>
     <WebUI>http://[IP]:[PORT::3000]</WebUI>
     <TemplateURL>https://raw.githubusercontent.com/maskpx/docker-template/master/maskpx_wetty.xml</TemplateURL>
     <Icon>https://raw.githubusercontent.com/maskpx/docker-template/master/img/wetty.png</Icon>
-    <Description>HTTP based ssh gateway   Converted By Community Applications   Always verify this template (and values) against the dockerhub support page for the container</Description>
     <Config Name="localtime" Target="/etc/localtime" Default="/etc/localtime" Mode="ro" Description="Localtime from Server" Type="Path" Display="advanced" Required="true" Mask="false">/etc/localtime</Config>
     <Config Name="Port" Target="3000" Default="3000" Mode="tcp" Description="Webgui Port of Wetty" Type="Port" Display="always" Required="false" Mask="false"/>
     <Config Name="traefik.enable" Target="traefik.enable" Default="true" Mode="" Description="Enable Traefik" Type="Label" Display="always" Required="false" Mask="false">true</Config>
