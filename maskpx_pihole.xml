@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>pihole-template</Name>
+  <Repository>pihole/pihole:latest</Repository>
+  <Registry>https://hub.docker.com/r/pihole/pihole/</Registry>
+  <Network>br0</Network>
+  <MyIP></MyIP>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/maskpx/docker-template/issues</Support>
+  <Project>https://github.com/causefx/Organizr</Project>
+  <Overview>
+Pi-Hole - let's block those pesky ads!&#xD;
+This is a template for the official PiHole Docker&#xD;
+Make sure that you use bridge mode and give PiHole&#xD;
+it's own IP address.&#xD;
+Also, if you set you router to give out the PiHole address to clients,&#xD;
+make sure that you fixe the unRaid servers dns to point to a real DNS Server.
+  </Overview>
+  <Category>Network:Other Other:</Category>
+  <WebUI>http://[IP]:[PORT:80]/admin</WebUI>
+  <TemplateURL>hhttps://raw.githubusercontent.com/maskpx/docker-template/master/maskpx_pihole.xml</TemplateURL>
+  <Icon>https://i.imgur.com/OWkNcEn.png</Icon>
+  <ExtraParams>--restart=unless-stopped</ExtraParams>
+  <Config Name="Host Port 1" Target="53" Default="53" Mode="tcp" Description="Container Port: 53" Type="Port" Display="always" Required="true" Mask="false">53</Config>
+  <Config Name="Host Port 2" Target="53" Default="53" Mode="udp" Description="Container Port: 53" Type="Port" Display="always" Required="true" Mask="false">53</Config>
+  <Config Name="Host Port 3" Target="67" Default="67" Mode="udp" Description="Container Port: 67" Type="Port" Display="always" Required="true" Mask="false">67</Config>
+  <Config Name="Host Port 4" Target="80" Default="80" Mode="tcp" Description="Container Port: 80" Type="Port" Display="always" Required="true" Mask="false">80</Config>
+  <Config Name="Host Port 5" Target="443" Default="443" Mode="tcp" Description="Container Port: 443" Type="Port" Display="always" Required="true" Mask="false">443</Config>
+  <Config Name="Host Path 1" Target="/etc/pihole/" Default="/mnt/user/appdata/pihole/pihole/" Mode="rw" Description="Container Path: /etc/pihole/" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/pihole/pihole/</Config>
+  <Config Name="Host Path 2" Target="/etc/dnsmasq.d/" Default="/mnt/user/appdata/pihole/dnsmasq.d/" Mode="rw" Description="Container Path: /etc/dnsmasq.d/" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/pihole/dnsmasq.d/</Config>
+  <Config Name="Key 1" Target="DNS1" Default="8.8.8.8" Mode="" Description="Container Variable: DNS1" Type="Variable" Display="always" Required="false" Mask="false">9.9.9.9</Config>
+  <Config Name="Key 2" Target="DNS2" Default="8.8.4.4" Mode="" Description="Container Variable: DNS2" Type="Variable" Display="always" Required="false" Mask="false">1.1.1.1</Config>
+  <Config Name="Key 3" Target="TZ" Default="Europe/London" Mode="" Description="Container Variable: TZ" Type="Variable" Display="always" Required="false" Mask="false">Europe/Vienna</Config>
+  <Config Name="Key 4" Target="WEBPASSWORD" Default="admin" Mode="" Description="Container Variable: WEBPASSWORD" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="Key 5" Target="INTERFACE" Default="br0" Mode="" Description="Container Variable: INTERFACE" Type="Variable" Display="always" Required="false" Mask="false">br0</Config>
+  <Config Name="Key 6" Target="ServerIP" Default="192.168.1.24" Mode="" Description="Container Variable: ServerIP" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="Key 7" Target="ServerIPv6" Default="" Mode="" Description="Container Variable: ServerIPv6" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="Key 8" Target="IPv6" Default="False" Mode="" Description="Container Variable: IPv6" Type="Variable" Display="always" Required="false" Mask="false">False</Config>
+  <Config Name="Key 9" Target="DNSMASQ_LISTENING" Default="all" Mode="" Description="Container Variable: DNSMASQ_LISTENING" Type="Variable" Display="always" Required="false" Mask="false">all</Config>
+  <Config Name="traefik.enable" Target="traefik.enable" Default="true" Mode="" Description="Enable Traefik" Type="Label" Display="always" Required="false" Mask="false">true</Config>
+  <Config Name="traefik.http.routers.pihole2.rule" Target="traefik.http.routers.pihole2.rule" Default="Host(`pihole2.example.com`)" Mode="" Description="Container Label: traefik.http.services.pihole2.rule" Type="Label" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="traefik.http.services.pihole2.loadbalancer.server.port" Target="traefik.http.services.pihole2.loadbalancer.server.port" Default="80" Mode="" Description="Container Label: traefik.http.services.pihole2.loadbalancer.server.port" Type="Label" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="traefik.http.routers.pihole2.entrypoints" Target="traefik.http.routers.pihole2.entrypoints" Default="https" Mode="" Description="Container Label: traefik.http.routers.pihole2.entrypoints" Type="Label" Display="always" Required="false" Mask="false">https</Config>
+
+</Container>
