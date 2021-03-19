@@ -41,6 +41,6 @@ make sure that you fixe the unRaid servers dns to point to a real DNS Server.
   <Config Name="traefik.enable" Target="traefik.enable" Default="true" Mode="" Description="Enable Traefik" Type="Label" Display="always" Required="false" Mask="false">true</Config>
   <Config Name="traefik.http.routers.pihole2.rule" Target="traefik.http.routers.pihole2.rule" Default="Host(`pihole2.example.com`)" Mode="" Description="Container Label: traefik.http.services.pihole2.rule" Type="Label" Display="always" Required="false" Mask="false"></Config>
   <Config Name="traefik.http.services.pihole2.loadbalancer.server.port" Target="traefik.http.services.pihole2.loadbalancer.server.port" Default="80" Mode="" Description="Container Label: traefik.http.services.pihole2.loadbalancer.server.port" Type="Label" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="traefik.http.routers.portainer.middlewares" Target="traefik.http.routers.portainer.middlewares" Default="secured@file" Mode="" Description="Container Label: traefik.http.routers.portainer.middlewares:" Type="Label" Display="always" Required="false" Mask="false">add-admin@file</Config>
   <Config Name="traefik.http.routers.pihole2.entrypoints" Target="traefik.http.routers.pihole2.entrypoints" Default="https" Mode="" Description="Container Label: traefik.http.routers.pihole2.entrypoints" Type="Label" Display="always" Required="false" Mask="false">https</Config>
-
 </Container>
