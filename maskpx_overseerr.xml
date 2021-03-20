@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Overseerr</Name>
+    <Repository>sctx/overseerr</Repository>
+    <Registry>https://registry.hub.docker.com/r/sctx/overseerr/</Registry>
+    <Network>bridge</Network>
+    <Shell>sh</Shell>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/maskpx/docker-template/issues</Support>
+    <Project>https://docs.overseerr.dev/</Project>
+    <Overview>Overseerr is a free and open source software application for managing requests for your media library.&#xD;
+It integrates with your existing services such as Sonarr, Radarr and Plex!</Overview>
+    <Category/>
+    <WebUI>http://[IP]:[PORT:5055]/</WebUI>
+    <TemplateURL>https://raw.githubusercontent.com/diamkil/docker-templates/master/diamkil/overseerr.xml</TemplateURL>
+    <Icon>https://raw.githubusercontent.com/diamkil/docker-templates/master/diamkil/images/os_logo_square.png</Icon>
+    <Config Name="Host Port for 5055" Target="5055" Default="5055" Mode="tcp" Description="Container Port: 5055" Type="Port" Display="always" Required="true" Mask="false">5055</Config>
+    <Config Name="Host Path for /app/config" Target="/app/config" Default="/mnt/user/appdata/overseerr" Mode="rw" Description="Container Path: /app/config" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/overseerr</Config>
+    <Config Name="Log_Level" Target="LOG_LEVEL" Default="info" Mode="" Description="Container Variable: LOG_LEVEL" Type="Variable" Display="always" Required="false" Mask="false">info</Config>
+    <Config Name="UMASK" Target="UMASK" Default="000" Mode="" Description="Container Variable: UMASK" Type="Variable" Display="always" Required="false" Mask="false">000</Config>
+    <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="Container Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false">99</Config>
+    <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="Container Variable: PGID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
+    <Config Name="traefik.enable" Target="traefik.enable" Default="true" Mode="" Description="Enable Traefik" Type="Label" Display="always" Required="false" Mask="false">true</Config>
+    <Config Name="traefik.http.routers.overseerr.rule" Target="traefik.http.routers.overseerr.rule" Default="Host(`overseerr.example.com`)" Mode="" Description="Container Label: traefik.http.services.overseerr.rule" Type="Label" Display="always" Required="false" Mask="false"></Config>
+    <Config Name="traefik.http.services.overseerr.loadbalancer.server.port" Target="traefik.http.services.overseerr.loadbalancer.server.port" Default="5055" Mode="" Description="Container Label: traefik.http.services.overseerr.loadbalancer.server.port" Type="Label" Display="always" Required="false" Mask="false"></Config>
+    <Config Name="traefik.http.routers.overseerr.entrypoints" Target="traefik.http.routers.overseerr.entrypoints" Default="https" Mode="" Description="Container Label: traefik.http.routers.overseerr.entrypoints" Type="Label" Display="always" Required="false" Mask="false">https</Config>
+</Container>
