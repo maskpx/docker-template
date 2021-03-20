@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>plex</Name>
+    <Repository>linuxserver/plex</Repository>
+    <Registry>https://hub.docker.com/r/linuxserver/plex/</Registry>
+    <Network>host</Network>
+    <Shell>bash</Shell>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/maskpx/docker-template/issues</Support>
+    <Project>https://www.plex.tv/</Project>
+    <Overview>Plex organizes video, music and photos from personal media libraries and streams them to smart TVs,&#xD;
+streaming boxes and mobile devices.&#xD;
+Nvidia GPU Use&#xD;
+Using the Unraid Nvidia Plugin to install a version of Unraid with the Nvidia Drivers installed and add --runtime=nvidia to "extra parameters" (switch on advanced view)&#xD;
+and copy your GPU UUID to NVIDIA_VISIBLE_DEVICES.&#xD;
+Intel GPU Use&#xD;
+Edit your go file to include: modprobe i915, save and reboot, then add --device=/dev/dri to "extra parameters" (switch on advanced view)</Overview>
+    <Category>MediaServer:Video MediaServer:Music MediaServer:Photos</Category>
+    <WebUI>http://[IP]:[PORT:32400]/web</WebUI>
+    <TemplateURL>https://raw.githubusercontent.com/maskpx/docker-template/master/maskpx_plex.xml</TemplateURL>
+    <Icon>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/plex-icon.png</Icon>
+    <Config Name="VERSION" Target="VERSION" Default="" Mode="" Description="VERSION" Type="Variable" Display="always" Required="false" Mask="false">docker</Config>
+    <Config Name="Movies" Target="/movies" Default="" Mode="rw" Description="Movies - /movies" Type="Path" Display="always" Required="false" Mask="false"/>
+    <Config Name="TV" Target="/tv" Default="" Mode="rw" Description="TV - /tv" Type="Path" Display="always" Required="false" Mask="false"/>
+    <Config Name="Music" Target="/music" Default="" Mode="rw" Description="Music - /music" Type="Path" Display="always" Required="false" Mask="false"/>
+    <Config Name="Transcode" Target="/transcode" Default="" Mode="rw" Description="Path for transcoding folder (Optional)" Type="Path" Display="always" Required="false" Mask="false"/>
+    <Config Name="Intel Quick Sync" Target="" Default="/dev/dri" Mode="" Description="Container Device: " Type="Device" Display="always" Required="false" Mask="false"></Config>
+    <Config Name="Appdata" Target="/config" Default="/mnt/user/appdata/plex" Mode="rw" Description="Appdata" Type="Path" Display="advanced" Required="false" Mask="false">/mnt/user/appdata/plex</Config>
+    <Config Name="Webui" Target="32400" Default="32400" Mode="tcp" Description="For access to the Plex Media Server Webui (No effect in host mode - reference only)" Type="Port" Display="advanced" Required="false" Mask="false">32400</Config>
+    <Config Name="Plex Companion" Target="3005" Default="3005" Mode="tcp" Description="For controlling Plex Home Theater via Plex Companion (No effect in host mode - reference only)" Type="Port" Display="advanced" Required="false" Mask="false">3005</Config>
+    <Config Name="Roku via Plex Companion" Target="8324" Default="8324" Mode="tcp" Description="For controlling Plex for Roku via Plex Companion (No effect in host mode - reference only)" Type="Port" Display="advanced" Required="false" Mask="false">8324</Config>
+    <Config Name="Plex DLNA Server" Target="32469" Default="32469" Mode="tcp" Description="For access to the Plex DLNA Server (No effect in host mode - reference only)" Type="Port" Display="advanced" Required="false" Mask="false">32469</Config>
+    <Config Name="Plex DLNA Server" Target="1900" Default="1900" Mode="udp" Description="For access to the Plex DLNA Server (No effect in host mode - reference only)" Type="Port" Display="advanced" Required="false" Mask="false">1900</Config>
+    <Config Name="GDM network discovery" Target="32410" Default="32410" Mode="udp" Description="For current GDM network discovery (No effect in host mode - reference only)" Type="Port" Display="advanced" Required="false" Mask="false">32410</Config>
+    <Config Name="GDM network discovery" Target="32412" Default="32412" Mode="udp" Description="For current GDM network discovery (No effect in host mode - reference only)" Type="Port" Display="advanced" Required="false" Mask="false">32412</Config>
+    <Config Name="GDM network discovery" Target="32413" Default="32413" Mode="udp" Description="For current GDM network discovery (No effect in host mode - reference only)" Type="Port" Display="advanced" Required="false" Mask="false">32413</Config>
+    <Config Name="GDM network discovery" Target="32414" Default="32414" Mode="udp" Description="For current GDM network discovery (No effect in host mode - reference only)" Type="Port" Display="advanced" Required="false" Mask="false">32414</Config>
+    <Config Name="PUID" Target="PUID" Default="" Mode="" Description="PUID" Type="Variable" Display="advanced" Required="false" Mask="false">99</Config>
+    <Config Name="PGID" Target="PGID" Default="" Mode="" Description="PGID" Type="Variable" Display="advanced" Required="false" Mask="false">100</Config>
+    <Config Name="traefik.enable" Target="traefik.enable" Default="true" Mode="" Description="Enable Traefik" Type="Label" Display="always" Required="false" Mask="false">true</Config>
+    <Config Name="traefik.http.routers.nucplex.rule" Target="traefik.http.routers.nucplex.rule" Default="Host(`nucplex.example.com`)" Mode="" Description="Container Label: traefik.http.services.nucplex.rule" Type="Label" Display="always" Required="false" Mask="false"></Config>
+    <Config Name="traefik.http.services.nucplex.loadbalancer.server.port" Target="traefik.http.services.nucplex.loadbalancer.server.port" Default="32400" Mode="" Description="Container Label: traefik.http.services.nucplex.loadbalancer.server.port" Type="Label" Display="always" Required="false" Mask="false"></Config>
+    <Config Name="traefik.http.routers.nucplex.middlewares" Target="traefik.http.routers.nucplex.middlewares" Default="secured@file" Mode="" Description="Container Label: traefik.http.routers.nucplex.middlewares" Type="Label" Display="always" Required="false" Mask="false">secured@file</Config>
+    <Config Name="traefik.http.routers.nucplex.entrypoints" Target="traefik.http.routers.nucplex.entrypoints" Default="https" Mode="" Description="Container Label: traefik.http.routers.nucplex.entrypoints" Type="Label" Display="always" Required="false" Mask="false">https</Config>
+</Container>
