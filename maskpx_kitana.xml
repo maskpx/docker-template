@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>Kitana</Name>
+    <Repository>pannal/kitana</Repository>
+    <Registry>https://hub.docker.com/r/pannal/kitana/</Registry>
+    <Network>bridge</Network>
+    <Shell>sh</Shell>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/maskpx/docker-template/issues</Support>
+    <Project>https://github.com/pannal/Kitana</Project>
+    <Overview>
+Kitana exposes your Plex plugin interfaces "to the outside world".&#xD;
+It does that by authenticating against Plex.TV,&#xD;
+then connecting to the Plex Media Server you tell it to,&#xD;
+and essentially proxying the plugin UI.&#xD;
+It has full PMS connection awareness and allows you to connect locally, remotely, or even via relay.&#xD;
+&#xD;
+To set the baseurl for this application,&#xD;
+open advanced view, and add -p /kitana -P to the "Post Arguments"&#xD;
+    </Overview>
+    <Category>HomeAutomation: Tools:Utilities MediaApp:Other</Category>
+    <WebUI>http://[IP]:[PORT:31337]</WebUI>
+    <TemplateURL>https://raw.githubusercontent.com/maskpx/docker-template/master/maskpx_kitana.xml</TemplateURL>
+    <Icon>https://raw.githubusercontent.com/pannal/Kitana/master/static/img/android-icon-192x192.png</Icon>
+    <ExtraParams/>
+    <PostArgs>-B 0.0.0.0:31337</PostArgs>
+    <Config Name="WebUI" Target="31337" Default="31337" Mode="tcp" Description="Container Port: 31337" Type="Port" Display="always" Required="false" Mask="false">31337</Config>
+    <Config Name="Application Data" Target="/app/data" Default="/mnt/user/appdata/kitana" Mode="rw" Description="Container Path: /app/data" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/kitana</Config>
+    <Config Name="traefik.enable" Target="traefik.enable" Default="true" Mode="" Description="Enable Traefik" Type="Label" Display="always" Required="false" Mask="false">true</Config>
+    <Config Name="traefik.http.routers.kitana.rule" Target="traefik.http.routers.kitana.rule" Default="Host(`kitana.example.com`)" Mode="" Description="Container Label: traefik.http.services.kitana.rule" Type="Label" Display="always" Required="false" Mask="false"></Config>
+    <Config Name="traefik.http.services.kitana.loadbalancer.server.port" Target="traefik.http.services.kitana.loadbalancer.server.port" Default="31337" Mode="" Description="Container Label: traefik.http.services.kitana.loadbalancer.server.port" Type="Label" Display="always" Required="false" Mask="false"></Config>
+    <Config Name="traefik.http.routers.kitana.entrypoints" Target="traefik.http.routers.kitana.entrypoints" Default="https" Mode="" Description="Container Label: traefik.http.routers.kitana.entrypoints" Type="Label" Display="always" Required="false" Mask="false">https</Config>
+</Container>
