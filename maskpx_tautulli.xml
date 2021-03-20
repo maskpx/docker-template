@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Container version="2">
   <Name>tautulli</Name>
-  <Repository>linuxserver/tautulli</Repository>
+  <Repository>tautulli/tautulli</Repository>
   <Registry>https://hub.docker.com/r/linuxserver/tautulli/</Registry>
   <Network>bridge</Network>
   <Shell>sh</Shell>
@@ -22,12 +22,12 @@ Configuration&#xD;
   <WebUI>http://[IP]:[PORT:8181]/</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/maskpx/docker-template/master/tautulli.xml</TemplateURL>
   <Icon>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/tautulli-icon.png</Icon>
-  <Config Name="Host Port 1" Target="8181" Default="8181" Mode="tcp" Description="Container Port: 8181" Type="Port" Display="always" Required="true" Mask="false">8181</Config>
-  <Config Name="Key 1" Target="PUID" Default="99" Mode="" Description="Container Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false">99</Config>
-  <Config Name="Key 2" Target="PGID" Default="100" Mode="" Description="Container Variable: PGID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
+  <Config Name="Host Port 8181" Target="8181" Default="8181" Mode="tcp" Description="Container Port: 8181" Type="Port" Display="always" Required="true" Mask="false">8181</Config>
+  <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="Container Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false">99</Config>
+  <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="Container Variable: PGID" Type="Variable" Display="always" Required="false" Mask="false">100</Config>
   <Config Name="traefik.enable" Target="traefik.enable" Default="true" Mode="" Description="Enable Traefik" Type="Label" Display="always" Required="false" Mask="false">true</Config>
   <Config Name="traefik.http.routers.tautulli.rule" Target="traefik.http.routers.tautulli.rule" Default="Host(`tautulli.example.com`)" Mode="" Description="Container Label: traefik.http.services.tautulli.rule" Type="Label" Display="always" Required="false" Mask="false"></Config>
   <Config Name="traefik.http.services.tautulli.loadbalancer.server.port" Target="traefik.http.services.tautulli.loadbalancer.server.port" Default="8181" Mode="" Description="Container Label: traefik.http.services.tautulli.loadbalancer.server.port" Type="Label" Display="always" Required="false" Mask="false">8181</Config>
   <Config Name="traefik.http.routers.tautulli.entrypoints" Target="traefik.http.routers.tautulli.entrypoints" Default="https" Mode="" Description="Container Label: traefik.http.routers.tautulli.entrypoints" Type="Label" Display="always" Required="false" Mask="false">https</Config>
-  <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/tautulli" Mode="rw" Description="Container Path: /config" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/tautulli</Config>
+  <Config Name="AppData Path: /config" Target="/config" Default="/mnt/user/appdata/tautulli" Mode="rw" Description="Container Path: /config" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/tautulli</Config>
 </Container>
