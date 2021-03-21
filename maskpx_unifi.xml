@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<Container version="2">
+    <Name>unifi-controller</Name>
+    <Repository>linuxserver/unifi-controller</Repository>
+    <Registry>https://hub.docker.com/r/linuxserver/unifi-controller/</Registry>
+    <Network>br0</Network>
+    <MyIP/>
+    <Shell>bash</Shell>
+    <Privileged>false</Privileged>
+    <Support>https://github.com/maskpx/docker-template/issues</Support>
+    <Project>https://www.ui.com/software/</Project>
+    <Overview>&#xD;
+The UniFi&#xAE; Controller software is a powerful, enterprise wireless software engine ideal for high-density client deployments requiring low latency and high uptime performance.&#xD;
+Available Branches&#xD;
+Warning! The latest tag may be broken or buggy (and often is!)&#xD;
+latest - The most recent build version of the Controller software, regardless of release train.&#xD;
+LTS - The most recent Long Term Support release.&#xD;
+5.9 - The most recent 5.9.x release.&#xD;
+5.8 - The most recent 5.8.x release.&#xD;
+5.7 - The most recent 5.7.x release.&#xD;
+&#xD;
+Optional Ports (Not Mapped By Default)&#xD;
+6789 (TCP) - Port used for UniFi mobile speed test.&#xD;
+5656-5699 (UDP) - Ports used by AP-EDU broadcasting.&#xD;
+1900 (UDP) - Port used for "Make controller discoverable on L2 network" in controller settings.&#xD;
+27117 (TCP) - Port used for local-bound database communication.</Overview>
+    <Category>Tools:Utilities Network:Management</Category>
+    <WebUI>https://[IP]:[PORT:8443]</WebUI>
+    <TemplateURL>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/unifi-controller.xml</TemplateURL>
+    <Icon>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/unifi-controller-icon.png</Icon>
+    <Config Name="Port used for STUN." Target="3478" Default="3478" Mode="udp" Description="Port used for STUN." Type="Port" Display="always" Required="false" Mask="false"/>
+    <Config Name="Port used for device and controller communication." Target="8080" Default="8080" Mode="tcp" Description="Port used for device and controller communication." Type="Port" Display="always" Required="false" Mask="false"/>
+    <Config Name="Port used for controller GUI/API as seen in a web browser" Target="8443" Default="8443" Mode="tcp" Description="Port used for controller GUI/API as seen in a web browser" Type="Port" Display="always" Required="false" Mask="false"/>
+    <Config Name="Port used for HTTP portal redirection." Target="8880" Default="8880" Mode="tcp" Description="Port used for HTTP portal redirection." Type="Port" Display="always" Required="false" Mask="false"/>
+    <Config Name="Port used for HTTPS portal redirection." Target="8843" Default="8843" Mode="tcp" Description="8843" Type="Port" Display="always" Required="false" Mask="false"/>
+    <Config Name="Port used for AP discovery" Target="10001" Default="10001" Mode="udp" Description="Port used for AP discovery" Type="Port" Display="always" Required="false" Mask="false"/>
+    <Config Name="appdata" Target="/config" Default="/mnt/user/appdata/unifi-controller" Mode="rw" Description="Container Path: /config" Type="Path" Display="advanced" Required="false" Mask="false">/mnt/user/appdata/unifi-controller</Config>
+    <Config Name="PUID" Target="PUID" Default="" Mode="" Description="Container Variable: PUID" Type="Variable" Display="advanced" Required="false" Mask="false">99</Config>
+    <Config Name="PGID" Target="PGID" Default="" Mode="" Description="Container Variable: PGID" Type="Variable" Display="advanced" Required="false" Mask="false">100</Config>
+    <Config Name="traefik.enable" Target="traefik.enable" Default="true" Mode="" Description="Enable Traefik" Type="Label" Display="always" Required="false" Mask="false">true</Config>
+    <Config Name="traefik.http.routers.unifi.rule" Target="traefik.http.routers.unifi.rule" Default="Host(`unifi.example.com`)" Mode="" Description="Container Label: traefik.http.services.unifi.rule" Type="Label" Display="always" Required="false" Mask="false"></Config>
+    <Config Name="traefik.http.services.unifi.loadbalancer.server.port" Target="traefik.http.services.unifi.loadbalancer.server.port" Default="8843" Mode="" Description="Container Label: traefik.http.services.unifi.loadbalancer.server.port" Type="Label" Display="always" Required="false" Mask="false"></Config>
+    <Config Name="traefik.http.routers.unifi.middlewares" Target="traefik.http.routers.unifi.middlewares" Default="secured@file" Mode="" Description="Container Label: traefik.http.routers.unifi.middlewares" Type="Label" Display="always" Required="false" Mask="false">secured@file</Config>
+    <Config Name="traefik.http.routers.unifi.entrypoints" Target="traefik.http.routers.unifi.entrypoints" Default="https" Mode="" Description="Container Label: traefik.http.routers.unifi.entrypoints" Type="Label" Display="always" Required="false" Mask="false">https</Config>
+</Container>
