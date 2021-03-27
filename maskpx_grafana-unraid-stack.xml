@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Grafana-Unraid-Stack</Name>
+  <Repository>testdasi/grafana-unraid-stack:stable-amd64</Repository>
+  <Registry>https://registry.hub.docker.com/r/testdasi/grafana-unraid-stack/</Registry>
+  <Network>host</Network>
+  <Shell>bash</Shell>
+  <Privileged>true</Privileged>
+  <Support>https://github.com/maskpx/docker-template/issues</Support>
+  <Project>https://github.com/testdasi/grafana-unraid-stack</Project>
+  <Overview>&#xD;
+Meet Gus! He has everything you need to start monitoring Unraid in style (Grafana - Influxdb - Telegraf - Loki - Promtail).&#xD;
+&#xD;
+NOTE: Grafana always requires some customisation to suit each exact system.&#xD;
+&#xD;
+Includes both GUS demo Dashboard and Ultimate UNRAID Dashboard v1.3 (UUD - https://forums.unraid.net/topic/96895-ultimate-unraid-dashboard-uud/).&#xD;
+&#xD;
+High-level instructions: (1) Decide whether you want hddtemp or S.M.A.R.T (smartmontools) and set USE_HDDTEMP variable accordingly. Hint: GUS and UUD both use S.M.A.R.T  (2) Install docker with host network.  (3) Go to ip:3006 to access grafana, login with admin/admin and customize away.&#xD;
+&#xD;
+For more detailed instructions, refer to the support thread (https://forums.unraid.net/topic/96233-support-testdasi-repo/) or project page (https://github.com/testdasi/grafana-unraid-stack).&#xD;
+&#xD;
+</Overview>
+  <Category>Productivity: Tools:Utilities Other:</Category>
+  <WebUI>http://[IP]:[PORT:3006]/</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/maskpx/docker-template/master/maskpx_grafana-unraid-stack.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/testdasi/grafana-unraid-stack-base/master/grafana-unraid-stack.png</Icon>
+  <Config Name="Config" Target="/config" Default="/mnt/user/appdata/Grafana-Unraid-Stack" Mode="rw" Description="Container Path: /config" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/Grafana-Unraid-Stack</Config>
+  <Config Name="Data (db)" Target="/data" Default="/mnt/user/appdata/Grafana-Unraid-Stack/data" Mode="rw" Description="Container Path: /data" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/Grafana-Unraid-Stack/data</Config>
+  <Config Name="USE_HDDTEMP" Target="USE_HDDTEMP" Default="yes|no" Mode="" Description="Container Variable: USE_HDDTEMP" Type="Variable" Display="always" Required="false" Mask="false">yes</Config>
+  <Config Name="INFLUXDB_HTTP_PORT" Target="INFLUXDB_HTTP_PORT" Default="8086" Mode="" Description="Container Variable: INFLUXDB_HTTP_PORT" Type="Variable" Display="advanced-hide" Required="false" Mask="false">8086</Config>
+  <Config Name="LOKI_PORT" Target="LOKI_PORT" Default="3100" Mode="" Description="Container Variable: LOKI_PORT" Type="Variable" Display="advanced-hide" Required="false" Mask="false">3100</Config>
+  <Config Name="PROMTAIL_PORT" Target="PROMTAIL_PORT" Default="9086" Mode="" Description="Container Variable: PROMTAIL_PORT" Type="Variable" Display="advanced-hide" Required="false" Mask="false">9086</Config>
+  <Config Name="GRAFANA_PORT" Target="GRAFANA_PORT" Default="3006" Mode="" Description="Container Variable: GRAFANA_PORT" Type="Variable" Display="advanced-hide" Required="false" Mask="false">3006</Config>
+  <Config Name="Telegraf 1" Target="/rootfs" Default="/" Mode="ro" Description="Container Path: /rootfs" Type="Path" Display="advanced-hide" Required="false" Mask="false">/</Config>
+  <Config Name="Telegraf 2" Target="/rootfs/etc" Default="/etc" Mode="ro" Description="Container Path: /rootfs/etc" Type="Path" Display="advanced-hide" Required="false" Mask="false">/etc</Config>
+  <Config Name="Telegraf 3" Target="/rootfs/proc" Default="/proc" Mode="ro" Description="Container Path: /rootfs/proc" Type="Path" Display="advanced-hide" Required="false" Mask="false">/proc</Config>
+  <Config Name="Telegraf 4" Target="/rootfs/sys" Default="/sys" Mode="ro" Description="Container Path: /rootfs/sys" Type="Path" Display="advanced-hide" Required="false" Mask="false">/sys</Config>
+  <Config Name="Telegraf 5" Target="/var/run/docker.sock" Default="/var/run/docker.sock" Mode="ro" Description="Container Path: /var/run/docker.sock" Type="Path" Display="advanced-hide" Required="false" Mask="false">/var/run/docker.sock</Config>
+  <Config Name="Telegraf 6" Target="/var/run/utmp" Default="/var/run/utmp" Mode="ro" Description="Container Path: /var/run/utmp" Type="Path" Display="advanced-hide" Required="false" Mask="false">/var/run/utmp</Config>
+  <Config Name="Telegraf 7" Target="/run/udev" Default="/run/udev" Mode="ro" Description="Container Path: /run/udev" Type="Path" Display="advanced-hide" Required="false" Mask="false">/run/udev</Config>
+  <Config Name="HOST_ETC" Target="HOST_ETC" Default="/rootfs/etc" Mode="" Description="Container Variable: HOST_ETC" Type="Variable" Display="advanced-hide" Required="false" Mask="false">/rootfs/etc</Config>
+  <Config Name="HOST_PROC" Target="HOST_PROC" Default="/rootfs/proc" Mode="" Description="Container Variable: HOST_PROC" Type="Variable" Display="advanced-hide" Required="false" Mask="false">/rootfs/proc</Config>
+  <Config Name="HOST_SYS" Target="HOST_SYS" Default="/rootfs/sys" Mode="" Description="Container Variable: HOST_SYS" Type="Variable" Display="advanced-hide" Required="false" Mask="false">/rootfs/sys</Config>
+  <Config Name="HOST_MOUNT_PREFIX" Target="HOST_MOUNT_PREFIX" Default="/rootfs" Mode="" Description="Container Variable: HOST_MOUNT_PREFIX" Type="Variable" Display="advanced-hide" Required="false" Mask="false">/rootfs</Config>
+  <Config Name="traefik.enable" Target="traefik.enable" Default="true" Mode="" Description="Enable Traefik" Type="Label" Display="always" Required="false" Mask="false">true</Config>
+  <Config Name="traefik.http.routers.grafana.rule" Target="traefik.http.routers.grafana.rule" Default="Host(`grafana.example.com`)" Mode="" Description="Container Label: traefik.http.services.grafana.rule" Type="Label" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="traefik.http.services.grafana.loadbalancer.server.port" Target="traefik.http.services.grafana.loadbalancer.server.port" Default="3006" Mode="" Description="Container Label: traefik.http.services.grafana.loadbalancer.server.port" Type="Label" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="traefik.http.routers.grafana.middlewares" Target="traefik.http.routers.grafana.middlewares" Default="secured@file" Mode="" Description="Container Label: traefik.http.routers.grafana.middlewares" Type="Label" Display="always" Required="false" Mask="false">secured@file</Config>
+  <Config Name="traefik.http.routers.grafana.entrypoints" Target="traefik.http.routers.grafana.entrypoints" Default="https" Mode="" Description="Container Label: traefik.http.routers.grafana.entrypoints" Type="Label" Display="always" Required="false" Mask="false">https</Config>
+</Container>
